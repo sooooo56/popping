@@ -1,0 +1,186 @@
+
+// 기본 설정
+html {
+    font-size: 62.5%; // 1rem = 10px 설정
+}
+ 
+body {
+    font-size: 1.6rem; // 기본 폰트 크기 16px
+    font-family: 'Pretendard', sans-serif;
+    margin: 0; 
+}
+
+// 공통 변수
+$bColor: #000; // 검정색
+$WColor: #fff; // 흰색
+$pointCcolor: #FF3686; // 포인트 컬러
+
+// 공통 컨테이너
+.container {
+    max-width: 1440px; // 최대 너비 1440px
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 4rem; // 좌우 여백 (반응형 대비, 40px)
+    box-sizing: border-box;
+}
+
+// 메인 타이틀 (텍스트)
+.title {
+    font-size: 4.5rem; // 45px
+    font-weight: 700;
+    color: $bColor;
+}
+
+// 메인 비주얼 섹션 (배경 이미지 및 효과를 위한 래퍼)
+.main-visual-section {
+    position: relative;
+    width: 100vw;
+    height: 80rem; // 섹션의 높이 (800px)
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    overflow: hidden;
+
+    // 배경 이미지와 효과 
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('../img/mainvisual/main-bg.png');
+        background-size: cover; 
+        background-position: center;
+        background-repeat: no-repeat;
+        opacity: 0.3;
+        filter: blur(6px);
+        z-index: 1;
+    }
+}
+
+// 오늘의 팝업 (텍스트와 메인 이미지를 담는 컨테이너)
+#todayPopup {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+// 왼쪽 텍스트 영역 (오늘의 팝업 추천, 데이즈데이즈 팝업, 날짜)
+.todayPopupInnerTxt {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $bColor;
+    height: 40rem; // (400px)
+    // flex-grow: 1; // 남은 공간을 채우도록 (필요시 활성화)
+
+    // "오늘의 팝업 추천"과 "데이즈데이즈 팝업"을 묶는 그룹
+    .text-group {
+        display: flex;
+        flex-direction: column;
+        gap: 1.6rem; // 16px
+    }
+
+    .todayPopupTxt {
+        color: $pointCcolor;
+        font-weight: 700;
+        font-size: 3rem; // 30px
+    }
+ 
+    .date {
+        font-weight: 500;
+        font-size: 2.5rem; // 25px
+        color: $bColor;
+    }
+}
+
+// 오른쪽 메인 이미지 영역
+.main-visual-image {
+    flex-shrink: 0;
+    
+    img {
+        width: 40rem; // 400px
+        height: 40rem; // 400px
+        object-fit: cover;
+        display: block;
+        border-radius: 1rem; 
+        box-shadow: 0 1rem 3rem rgba(0,0,0,0.2); 
+    }
+}
+
+// --- 반응형 미디어 쿼리 (추가) ---
+// 태블릿 (max-width: 1024px)
+@media (max-width: 1024px) {
+    .main-visual-section {
+        height: 60rem;
+    }
+    .container {
+        padding: 0 3rem;
+    }
+    #todayPopup {
+        flex-direction: column;
+        align-items: center;
+        gap: 4rem;
+    }
+    .todayPopupInnerTxt {
+        text-align: center;
+        height: auto; 
+        gap: 3rem;
+    }
+    .text-group {
+        align-items: center;
+    }
+    .main-visual-image img {
+        width: 30rem;
+        height: 30rem;
+    }
+    .title {
+        font-size: 3.8rem;
+    }
+    .todayPopupTxt {
+        font-size: 2.5rem;
+    }
+    .date {
+        font-size: 2rem;
+    }
+}
+
+// 모바일 (max-width: 768px)
+@media (max-width: 768px) {
+    .main-visual-section {
+        height: 50rem; // 섹션 높이 조절
+    }
+    .container {
+        padding: 0 2rem;
+    }
+    #todayPopup {
+        flex-direction: column;
+        padding: 2rem 0;
+        gap: 3rem;
+    }
+    .todayPopupInnerTxt {
+        order: 2;
+        gap: 2rem;
+    }
+    .main-visual-image {
+        order: 1;
+
+        img {
+            width: 25rem;
+            height: 25rem;
+        }
+    }
+    .title {
+        font-size: 3rem;
+    }
+    .todayPopupTxt {
+        font-size: 2rem;
+    }
+    .date {
+        font-size: 1.8rem;
+    }
+}

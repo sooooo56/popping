@@ -1,0 +1,19 @@
+#navi {
+  background-color: #000;
+  color: #fff;
+}
+#navi .naviInner {
+  width: 70.313%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  height: 55px;
+  align-items: center;
+}
+
+.rightIcon {
+  display: flex;
+}
+.rightIcon :nth-child(1) {
+  padding-right: 12px;
+}

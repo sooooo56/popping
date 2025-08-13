@@ -1,0 +1,26 @@
+// 네비게이션 변수
+$bgColor:#000;
+$txtColor:#fff;
+
+#navi{
+    background-color: #000;
+    color: #fff;
+
+    .naviInner{
+        width: 70.313%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        height: 55px;
+        align-items: center;
+    }
+    
+}
+
+.rightIcon{
+    display: flex;
+
+    :nth-child(1){
+        padding-right: 12px;
+    }
+}
