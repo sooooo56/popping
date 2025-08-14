@@ -6,7 +6,7 @@ $background-color: #f8f8f8;
 $text-color: #000;
 $card-height: 30rem; // 25rem에서 30rem으로 증가
 $padding-desktop: 2.5rem;
-$padding-mobile: 1.5rem;
+$padding-mobile: 1.25rem;
 
 // 색상 정의
 $type-pink: #ED3DA6;
@@ -58,21 +58,18 @@ body {
     border-right: 2px solid $border-color;
     border-bottom: 2px solid $border-color;
 
-    // 첫 번째 박스 (Header)
     &:nth-child(1) {
       border-left: none;
       border-top: none;
       border-right: none;
       cursor: auto;
     }
-    // 두 번째 박스 (Empty)
     &:nth-child(2) {
       border-left: none;
       border-top: none;
       border-right: none;
       cursor: auto;
     }
-    // 세 번째 박스
     &:nth-child(3) {
       border-left: 2px solid $border-color;
     }
@@ -96,7 +93,6 @@ body {
     height: 100%;
     text-decoration: none;
     color: inherit;
-    position: relative; // 자식 요소들의 absolute 기준점
   }
 
   .event-card-hover {
@@ -132,16 +128,7 @@ body {
   
   // 헤더와 빈 박스가 아닌 경우에만 호버 효과 적용
   &:not(.event-header):not(.empty) {
-    a {
-      &:hover {
-        .event-card-content {
-          opacity: 0;
-        }
-        .event-card-hover {
-          opacity: 1;
-        }
-      }
-    }
+    @include card-hover-effect;
   }
 }
 
@@ -233,133 +220,5 @@ body {
     font-size: 1rem;
     font-weight: 500;
     color: $text-color;
-  }
-}
-
-// 데스크톱에서만 보이는 요소
-.desktop-only {
-  display: block;
-}
-
-// 모바일에서만 보이는 요소
-.mobile-only {
-  display: none;
-}
-
-// 모바일 슬라이더 컨테이너
-.mobile-slider-container {
-  display: none;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.swiper-pagination {
-  margin-top: 20px;
-}
-.swiper-pagination-bullets {
-    display: flex;
-    justify-content: center;
-}
-
-// 태블릿 반응형 (769px ~ 1024px)
-@media (min-width: 769px) and (max-width: 1024px) {
-  .main-event-grid {
-    grid-template-columns: repeat(3, 1fr);
-    .event-card {
-      &:nth-child(1), &:nth-child(2) { // 헤더 박스 1, 2
-        border-left: none;
-        border-right: 2px solid $border-color;
-        border-top: none;
-      }
-      &:nth-child(3) { // 헤더 박스 3 -> 일반 카드처럼 처리
-        border-left: 2px solid $border-color;
-        border-right: 2px solid $border-color;
-        border-top: none;
-      }
-      // 새로운 그리드 규칙 적용
-      border-right: 2px solid $border-color;
-      border-bottom: 2px solid $border-color;
-
-      // 1번째 열 (3n+1) border-left 제거
-      &:nth-child(3n + 1) {
-        border-left: none;
-      }
-      // 1번째 줄 (-n+3) border-top 제거
-      &:nth-child(-n + 3) {
-        border-top: none;
-      }
-      // 첫번째, 두번째 헤더 카드 border 처리
-      &:nth-child(1), &:nth-child(2) {
-          border-left: none;
-          border-right: 2px solid $border-color;
-          border-top: none;
-      }
-      // 3번째 카드 (첫번째 일반 카드) border-left 복구
-      &:nth-child(3) {
-          border-left: 2px solid $border-color;
-      }
-
-    }
-  }
-}
-
-// 모바일 반응형 (768px 이하)
-@media (max-width: 768px) {
-  .main-event-grid {
-    display: none;
-  }
-
-  .event-header{
-    height: 10rem;
-  }
-
-  .event-header.mobile-only {
-    @include mobile-header-style;
-    display: flex;
-  }
-
-  .main-event-wrapper {
-    padding: $padding-mobile;
-  }
-
-  .mobile-slider-container {
-    display: block;
-  }
-
-  .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    border: 1px solid $border-color;
-    cursor: grab;
-    box-sizing: border-box;
-
-    // 썸네일과 텍스트 박스 스타일
-    .event-card-hover, .event-card-content {
-      position: relative;
-      width: 100%; // 썸네일과 너비 동일하게
-    }
-    
-    .event-card-hover {
-        height: 30.5rem;
-
-        img{
-            width: 100%;
-        }
-    }
-    
-    .event-card-content {
-      justify-content: flex-start;
-      background: #fff;
-      padding: $padding-mobile;
-      height: auto;
-      width: auto;
-    }
-
-    .event-info {
-      .type, .title, .date {
-        color: $text-color;
-      }
-    }
   }
 }
