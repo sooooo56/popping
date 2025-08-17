@@ -1,4 +1,3 @@
-
 // 기본 설정
 html {
   font-size: 62.5%; // 1rem = 10px 설정
@@ -8,6 +7,7 @@ body {
   font-size: 1.6rem; // 기본 폰트 크기 16px
   font-family: 'Pretendard', sans-serif;
   margin: 0; 
+  background-color: $background-color;
 }
 
 // 공통 변수
@@ -22,13 +22,6 @@ $pointCcolor: #FF3686; // 포인트 컬러
   margin: 0 auto;
   padding: 0 4rem; // 좌우 여백 (반응형 대비, 40px)
   box-sizing: border-box;
-}
-
-// 메인 타이틀 (텍스트)
-.title {
-  font-size: 4.5rem; // 45px
-  font-weight: 700;
-  color: $bColor;
 }
 
 // 메인 비주얼 섹션 (배경 이미지 및 효과를 위한 래퍼)
@@ -85,13 +78,19 @@ $pointCcolor: #FF3686; // 포인트 컬러
       gap: 1.6rem; // 16px
   }
 
+  .popup-name {
+    font-size: 4rem; // 40px
+    font-weight: 700;
+    color: $bColor;
+  }
+
   .todayPopupTxt {
       color: $pointCcolor;
       font-weight: 700;
       font-size: 3rem; // 30px
   }
 
-  .date {
+  .pop-date {
       font-weight: 500;
       font-size: 2.5rem; // 25px
       color: $bColor;
@@ -107,12 +106,11 @@ $pointCcolor: #FF3686; // 포인트 컬러
       height: 40rem; // 400px
       object-fit: cover;
       display: block;
-      border-radius: 1rem; 
-      box-shadow: 0 1rem 3rem rgba(0,0,0,0.2); 
+      // border-radius: 1rem; 
+      // box-shadow: 0 1rem 3rem rgba(0,0,0,0.2); 
   }
 }
 
-// --- 반응형 미디어 쿼리 (추가) ---
 // 태블릿 (max-width: 1024px)
 @media (max-width: 1024px) {
   .main-visual-section {
@@ -130,23 +128,28 @@ $pointCcolor: #FF3686; // 포인트 컬러
       text-align: center;
       height: auto; 
       gap: 3rem;
+
+      .text-group {
+        align-items: center;
+        .popup-name {
+          font-size: 3.8rem;
+      }
+      .todayPopupTxt {
+          font-size: 2.5rem;
+      }
+      .pop-date {
+          font-size: 2rem;
+      }
+    }
   }
-  .text-group {
-      align-items: center;
+
+  .main-visual-image {
+    img{
+        width: 30rem;
+        height: 30rem;
+    }
   }
-  .main-visual-image img {
-      width: 30rem;
-      height: 30rem;
-  }
-  .title {
-      font-size: 3.8rem;
-  }
-  .todayPopupTxt {
-      font-size: 2.5rem;
-  }
-  .date {
-      font-size: 2rem;
-  }
+  
 }
 
 // 모바일 (max-width: 768px)
@@ -161,11 +164,23 @@ $pointCcolor: #FF3686; // 포인트 컬러
       flex-direction: column;
       padding: 2rem 0;
       gap: 3rem;
+
+      .todayPopupInnerTxt {
+        order: 2;
+        gap: 2rem;
+  
+        .popup-name {
+          font-size: 2.5rem;
+      }
+      .todayPopupTxt {
+          font-size: 2rem;
+      }
+        .pop-date {
+          font-size: 1.5rem;
+      }
+    }
   }
-  .todayPopupInnerTxt {
-      order: 2;
-      gap: 2rem;
-  }
+ 
   .main-visual-image {
       order: 1;
 
@@ -174,13 +189,6 @@ $pointCcolor: #FF3686; // 포인트 컬러
           height: 25rem;
       }
   }
-  .title {
-      font-size: 3rem;
-  }
-  .todayPopupTxt {
-      font-size: 2rem;
-  }
-  .date {
-      font-size: 1.8rem;
-  }
+
+  
 }

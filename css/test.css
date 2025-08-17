@@ -174,7 +174,7 @@ body {
   display: none;
 }
 
-.mobile-slider-container {
+#mobile-slider-container {
   display: none;
   width: 100%;
   overflow-x: hidden;
@@ -240,7 +240,7 @@ body {
   .main-event-wrapper {
     padding: 1.5rem;
   }
-  .mobile-slider-container {
+  #mobile-slider-container {
     display: block;
   }
   .swiper-slide {

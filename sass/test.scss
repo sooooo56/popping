@@ -1,10 +1,9 @@
-// ongoingPopup.scss
-
-// SCSS 변수 정의
+// 변수 정의
 $border-color: #000;
 $background-color: #f8f8f8;
 $text-color: #000;
-$card-height: 30rem; // 25rem에서 30rem으로 증가
+
+$card-height: 30rem;
 $padding-desktop: 2.5rem;
 $padding-mobile: 1.5rem;
 
@@ -12,7 +11,7 @@ $padding-mobile: 1.5rem;
 $type-pink: #ED3DA6;
 $type-purple: #8E49DE;
 
-// 믹스인을 사용한 재사용 가능한 스타일
+// 재사용 가능한 스타일
 @mixin mobile-header-style {
   display: flex;
   flex-direction: column;
@@ -247,7 +246,7 @@ body {
 }
 
 // 모바일 슬라이더 컨테이너
-.mobile-slider-container {
+#mobile-slider-container {
   display: none;
   width: 100%;
   overflow-x: hidden;
@@ -322,7 +321,7 @@ body {
     padding: $padding-mobile;
   }
 
-  .mobile-slider-container {
+  #mobile-slider-container {
     display: block;
   }
 

@@ -13,10 +13,10 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
     <!-- main css -->
-    <link rel="stylesheet" href="./css/test.css">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/ongoingPopup.css">
+    <link rel="stylesheet" href="./css/test.css">
     <!-- <link rel="stylesheet" href="./css/navigation.css"> -->
-    <!-- <link rel="stylesheet" href="./css/ongoingPopup.css"> -->
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
@@ -245,9 +245,8 @@
         </div>
 
         <!-- 모바일용 Swiper 슬라이더 -->
-        <div class="mobile-slider-container swiper">
+        <div class="swiper" id="mobile-slider-container">
             <div class="swiper-wrapper">
-
                 <div class="swiper-slide">
                     <a href="#">
                         <div class="event-card-hover">
@@ -419,20 +418,15 @@
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
-        // DOMContentLoaded 이벤트 리스너를 사용해 DOM이 완전히 로드된 후 스크립트 실행
         document.addEventListener('DOMContentLoaded', () => {
-            // Swiper 인스턴스 생성
-            const swiper = new Swiper('.mobile-slider-container', {
-                // 모바일에서만 슬라이더 활성화
-                // 화면 너비가 768px 이하일 때만 Swiper 활성화
+            const swiper = new Swiper('#mobile-slider-container', {
                 breakpoints: {
                     769: {
                         enabled: false,
                     },
-                    // 768px 이하에서는 이 설정이 적용됨
                     0: {
-                        slidesPerView: 1.15, // 한 화면에 보이는 슬라이드 수
-                        spaceBetween: 20, // 슬라이드 사이 간격
+                        slidesPerView: 1.15,
+                        spaceBetween: 20,
                     },
                 },
                 

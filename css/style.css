@@ -16,8 +16,8 @@ body {
   box-sizing: border-box;
 }
 
-.title {
-  font-size: 4.5rem;
+.popup-name {
+  font-size: 4rem;
   font-weight: 700;
   color: #000;
 }
@@ -73,7 +73,7 @@ body {
   font-weight: 700;
   font-size: 3rem;
 }
-.todayPopupInnerTxt .date {
+.todayPopupInnerTxt .pop-date {
   font-weight: 500;
   font-size: 2.5rem;
   color: #000;
@@ -109,21 +109,21 @@ body {
     height: auto;
     gap: 3rem;
   }
-  .text-group {
+  .todayPopupInnerTxt .text-group {
     align-items: center;
+  }
+  .todayPopupInnerTxt .text-group .popup-name {
+    font-size: 3.8rem;
+  }
+  .todayPopupInnerTxt .text-group .todayPopupTxt {
+    font-size: 2.5rem;
+  }
+  .todayPopupInnerTxt .text-group .pop-date {
+    font-size: 2rem;
   }
   .main-visual-image img {
     width: 30rem;
     height: 30rem;
-  }
-  .title {
-    font-size: 3.8rem;
-  }
-  .todayPopupTxt {
-    font-size: 2.5rem;
-  }
-  .date {
-    font-size: 2rem;
   }
 }
 @media (max-width: 768px) {
@@ -138,9 +138,18 @@ body {
     padding: 2rem 0;
     gap: 3rem;
   }
-  .todayPopupInnerTxt {
+  #todayPopup .todayPopupInnerTxt {
     order: 2;
     gap: 2rem;
+  }
+  #todayPopup .todayPopupInnerTxt .popup-name {
+    font-size: 2.5rem;
+  }
+  #todayPopup .todayPopupInnerTxt .todayPopupTxt {
+    font-size: 2rem;
+  }
+  #todayPopup .todayPopupInnerTxt .pop-date {
+    font-size: 1.5rem;
   }
   .main-visual-image {
     order: 1;
@@ -148,14 +157,5 @@ body {
   .main-visual-image img {
     width: 25rem;
     height: 25rem;
-  }
-  .title {
-    font-size: 3rem;
-  }
-  .todayPopupTxt {
-    font-size: 2rem;
-  }
-  .date {
-    font-size: 1.8rem;
   }
 }
