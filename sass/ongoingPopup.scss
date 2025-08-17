@@ -2,6 +2,7 @@
 $border-color: #000;
 $background-color: #f8f8f8;
 $text-color: #000;
+
 $card-height: 30rem;
 $padding-desktop: 2.5rem;
 $padding-mobile: 1.5rem;
@@ -32,12 +33,6 @@ $type-purple: #8E49DE;
   }
 }
 
-
-.main-event-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: $padding-desktop;
-}
 
 // 데스크톱 그리드
 .main-event-grid {
@@ -147,7 +142,7 @@ $type-purple: #8E49DE;
   box-sizing: border-box;
 
   .event-header-title {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 700;
     color: $text-color;
     line-height: 1.2;
@@ -307,13 +302,10 @@ $type-purple: #8E49DE;
 
   .event-header.mobile-only {
     @include mobile-header-style;
-    display: flex;
+    padding: 1.5rem 0;
   }
 
-  .main-event-wrapper {
-    padding: $padding-mobile;
-  }
-
+  
   #mobile-slider-container {
     display: block;
   }
@@ -333,7 +325,7 @@ $type-purple: #8E49DE;
     }
     
     .event-card-hover {
-        height: 30.5rem;
+        height: 31.5rem;
 
         img{
             width: 100%;

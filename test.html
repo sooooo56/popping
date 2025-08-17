@@ -7,34 +7,37 @@
     <title>popping</title>
 
     <!-- reset-css -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@jeclark/css-reset/reset.min.css">
 
     <!-- Pretendard font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
     <!-- main css -->
-    <link rel="stylesheet" href="./css/style.css">
-    <link rel="stylesheet" href="./css/ongoingPopup.css">
     <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- <link rel="stylesheet" href="./css/navigation.css"> -->
+    <!-- <link rel="stylesheet" href="./css/ongoingPopup.css"> -->
+    <script src="./js/script.js"></script>
 
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
     
 </head>
 <body>
     
     <!-- 메인 비주얼 섹션 시작 -->
-    <div class="main-visual-section">
+    <section class="main-visual-section">
         <div class="container">
             <div id="todayPopup">
                 <!-- 왼쪽 텍스트 영역 -->
                 <div class="todayPopupInnerTxt">
                     <div class="text-group">
                         <p class="todayPopupTxt">오늘의 팝업 추천</p>
-                        <p class="title">데이즈데이즈 팝업</p>
+                        <p class="popup-name">데이즈데이즈 팝업</p>
                     </div>
-                    <p class="date">25.07.04(금) ~ 25.08.31(일)</p>
+                    <p class="pop-date">25.07.04(금) ~ 25.08.31(일)</p>
                 </div>
 
                 <!-- 오른쪽 메인 이미지 영역 -->
@@ -43,11 +46,11 @@
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <!-- 메인 비주얼 섹션 끝 -->
 
     <!-- 전체 팝업 일정 -->
-    <div class="main-event-wrapper">
+    <section class="main-event-wrapper">
         <!-- 모바일에서만 보이는 헤더 -->
         <div class="event-header mobile-only">
             <div>
@@ -61,7 +64,7 @@
         </div>
 
         <!-- 데스크톱용 그리드 -->
-        <div class="main-event-grid">
+        <section class="main-event-grid">
             <!-- 첫 번째 박스: 진행 중인 행사 타이틀과 전체보기 링크 -->
             <div class="event-card event-header">
                 <div class="event-card-content">
@@ -242,10 +245,10 @@
                     </div>
                 </a>
             </div>
-        </div>
+        </section>
 
         <!-- 모바일용 Swiper 슬라이더 -->
-        <div class="swiper" id="mobile-slider-container">
+        <section class="swiper" id="mobile-slider-container">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
                     <a href="#">
@@ -412,31 +415,25 @@
             </div>
             <!-- Swiper 페이지네이션 (점) -->
             <div class="swiper-pagination"></div>
-        </div>
+        </section>
     </div>
+
+    <section class="container">
+        <p class="new-title">신규 팝업</p>
+
+        <div class="new-container">
+            <div class="ing-box">진행 중</div>
+            <div class="new-txt">
+                <p>음뽀챠무 떡집 팝업</p>
+                <p>2025. 7. 4.~2025. 8. 17.</p>
+                <p>시루떡으로 입국한 음뽀챠무의 굿즈/포토존 <br>
+                    + 빤쮸토끼 콜라보 포함 팝업.</p>
+            </div>
+            <div class="new-button">
+                <a href="#">자세히 보기</a>
+            </div>
+        </div>
+    </section>
     
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const swiper = new Swiper('#mobile-slider-container', {
-                breakpoints: {
-                    769: {
-                        enabled: false,
-                    },
-                    0: {
-                        slidesPerView: 1.15,
-                        spaceBetween: 20,
-                    },
-                },
-                
-                // 페이지네이션 (점) 활성화
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-            });
-        });
-    </script>
 </body>
 </html>

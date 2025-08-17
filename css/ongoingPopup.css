@@ -1,9 +1,3 @@
-.main-event-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 2.5rem;
-}
-
 .main-event-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -92,7 +86,7 @@
   box-sizing: border-box;
 }
 .event-header .event-header-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: 700;
   color: #000;
   line-height: 1.2;
@@ -229,10 +223,7 @@
     justify-content: space-between;
     padding: 1.5rem;
     box-sizing: border-box;
-    display: flex;
-  }
-  .main-event-wrapper {
-    padding: 1.5rem;
+    padding: 1.5rem 0;
   }
   #mobile-slider-container {
     display: block;
@@ -251,7 +242,7 @@
     width: 100%;
   }
   .swiper-slide .event-card-hover {
-    height: 30.5rem;
+    height: 31.5rem;
   }
   .swiper-slide .event-card-hover img {
     width: 100%;
