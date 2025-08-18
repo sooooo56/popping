@@ -8,18 +8,17 @@ body {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .container {
   max-width: 1440px;
   width: 100%;
-  margin: 0 auto;
+  margin: 10rem auto;
   padding: 0 4rem;
   box-sizing: border-box;
-}
-
-.popup-name {
-  font-size: 4rem;
-  font-weight: 700;
-  color: #000;
 }
 
 .main-visual-section {
@@ -68,6 +67,11 @@ body {
   flex-direction: column;
   gap: 1.6rem;
 }
+.todayPopupInnerTxt .popup-name {
+  font-size: 4rem;
+  font-weight: 700;
+  color: #000;
+}
 .todayPopupInnerTxt .todayPopupTxt {
   color: #FF3686;
   font-weight: 700;
@@ -88,8 +92,6 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
   display: block;
-  border-radius: 1rem;
-  box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 1024px) {
@@ -131,7 +133,8 @@ body {
     height: 50rem;
   }
   .container {
-    padding: 0 2rem;
+    padding: 0 4rem;
+    margin: 5rem auto;
   }
   #todayPopup {
     flex-direction: column;

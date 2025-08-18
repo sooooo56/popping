@@ -1,364 +1,130 @@
-// 변수 정의
-$border-color: #000;
-$background-color: #f8f8f8;
-$text-color: #000;
+@use 'variables' as var;
 
-$card-height: 30rem;
-$padding-desktop: 2.5rem;
-$padding-mobile: 1.5rem;
 
-// 색상 정의
-$type-pink: #ED3DA6;
-$type-purple: #8E49DE;
-
-// 재사용 가능한 스타일
-@mixin mobile-header-style {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: $padding-mobile;
-  box-sizing: border-box;
+.new-container {
+    background-color: var.$grayColor;
+    padding: 50px 0;
 }
 
-@mixin card-hover-effect {
-  transition: opacity 0.3s ease;
-  
-  &:hover {
-    .event-card-content {
-      opacity: 0;
-    }
-    .event-card-hover {
-      opacity: 1;
-    }
-  }
+.new-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 0 20px;
 }
 
-// 기본 스타일
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  background-color: $background-color;
-}
-
-.main-event-wrapper {
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: $padding-desktop;
-}
-
-// 데스크톱 그리드
-.main-event-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-left: 2px solid $border-color;
-  border-top: 2px solid $border-color;
-
-  .event-card {
-    border-right: 2px solid $border-color;
-    border-bottom: 2px solid $border-color;
-
-    // 첫 번째 박스 (Header)
-    &:nth-child(1) {
-      border-left: none;
-      border-top: none;
-      border-right: none;
-      cursor: auto;
-    }
-    // 두 번째 박스 (Empty)
-    &:nth-child(2) {
-      border-left: none;
-      border-top: none;
-      border-right: none;
-      cursor: auto;
-    }
-    // 세 번째 박스
-    &:nth-child(3) {
-      border-left: 2px solid $border-color;
-    }
-
-    &.event-header {
-      cursor: default;
-    }
-  }
-}
-
-.event-card {
-  position: relative;
-  height: $card-height;
-  overflow: hidden;
-  cursor: pointer;
-
-  // 링크 스타일 추가
-  a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    text-decoration: none;
-    color: inherit;
-    position: relative; // 자식 요소들의 absolute 기준점
-  }
-
-  .event-card-hover {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    background-color: $background-color;
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  .event-card-content {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding: $padding-desktop;
-    box-sizing: border-box;
-    transition: opacity 0.3s ease;
+.new-container-inner {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  
-  // 헤더와 빈 박스가 아닌 경우에만 호버 효과 적용
-  &:not(.event-header):not(.empty) {
-    a {
-      &:hover {
-        .event-card-content {
-          opacity: 0;
+    align-items: center;
+    padding: 0 20px;
+    
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+}
+
+.new-text {
+    width: 30%;
+    padding-right: 50px;
+    
+    @media (max-width: 768px) {
+        width: 100%;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    
+    .ing-box {
+        display: inline-block;
+        background-color: var.$point-color;
+        padding: 0.3rem 2rem;
+        border-radius: 3.75rem;
+        color: var.$WColor;
+    }
+
+    .new-txt {
+        .new-name {
+            font-size: 1.875rem;
+            font-weight: bold;
+            padding-top: 10px;
         }
-        .event-card-hover {
-          opacity: 1;
+
+        .new-info {
+            padding-top: 20px;
         }
-      }
-    }
-  }
-}
-
-// 헤더 박스 스타일
-.event-header {
-  height: $card-height;
-  padding: $padding-desktop;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  box-sizing: border-box;
-
-  .event-header-title {
-    font-size: 2rem;
-    font-weight: 700;
-    color: $text-color;
-    line-height: 1.2;
-    margin: 0;
-  }
-
-  .event-header-view-all {
-    display: inline-flex;
-    align-items: flex-end;
-    font-size: 1rem;
-    font-weight: 500;
-    color: #000;
-    text-decoration: none;
-
-    .icon {
-      display: inline-block;
-      width: 20px;
-      height: 20px;
-      margin-right: 8px;
-      background-size: contain;
-      background-repeat: no-repeat;
-
-      &.calendar {
-        background-image: url('https://placehold.co/20x20/000000/ffffff?text=C');
-      }
-
-      &.arrow {
-        width: 12px;
-        height: 12px;
-        margin-left: 8px;
-        background-image: url('https://placehold.co/12x12/000000/ffffff?text=>');
-      }
-    }
-  }
-}
-
-// 이벤트 정보 스타일
-.event-info {
-  .type {
-    font-size: 1rem;
-    font-weight: 500;
-    position: relative;
-    padding-left: 20px;
-    color: $text-color;
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 0;
-      transform: translateY(-50%);
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
     }
 
-    &.pink::before {
-      background-color: $type-pink;
+    .new-button {
+        a {
+          display: inline-block;
+          margin-top: 20px;
+          padding: 10px 0;
+          color: #333;
+          border-bottom: 2px solid transparent;
+          transition: all 0.3s ease;
+          position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              width: 100%;
+              height: 2px;
+              background-color: var.$point-color;
+              transform: scaleX(0);
+              transition: transform 0.3s ease;
+            }
+
+            &:hover {
+              font-weight: 800;
+              color: var.$point-color;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+            }
+        }
+    }
+}
+
+.new-Swiper {
+    width: 70%;
+    
+    @media (max-width: 768px) {
+        width: 100%;
     }
 
-    &.purple::before {
-      background-color: $type-purple;
+    .swiper-slide {
+        transition: opacity 0.3s ease;
     }
-  }
 
-  .title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: $text-color;
-    margin-top: 10px;
-    line-height: 1.4;
-  }
-
-  .date {
-    font-size: 1rem;
-    font-weight: 500;
-    color: $text-color;
-  }
-}
-
-// 데스크톱에서만 보이는 요소
-.desktop-only {
-  display: block;
-}
-
-// 모바일에서만 보이는 요소
-.mobile-only {
-  display: none;
-}
-
-// 모바일 슬라이더 컨테이너
-#mobile-slider-container {
-  display: none;
-  width: 100%;
-  overflow-x: hidden;
-}
-
-.swiper-pagination {
-  margin-top: 20px;
-}
-.swiper-pagination-bullets {
-    display: flex;
-    justify-content: center;
-}
-
-// 태블릿 반응형 (769px ~ 1024px)
-@media (min-width: 769px) and (max-width: 1024px) {
-  .main-event-grid {
-    grid-template-columns: repeat(3, 1fr);
-    .event-card {
-      &:nth-child(1), &:nth-child(2) { // 헤더 박스 1, 2
-        border-left: none;
-        border-right: 2px solid $border-color;
-        border-top: none;
-      }
-      &:nth-child(3) { // 헤더 박스 3 -> 일반 카드처럼 처리
-        border-left: 2px solid $border-color;
-        border-right: 2px solid $border-color;
-        border-top: none;
-      }
-      // 새로운 그리드 규칙 적용
-      border-right: 2px solid $border-color;
-      border-bottom: 2px solid $border-color;
-
-      // 1번째 열 (3n+1) border-left 제거
-      &:nth-child(3n + 1) {
-        border-left: none;
-      }
-      // 1번째 줄 (-n+3) border-top 제거
-      &:nth-child(-n + 3) {
-        border-top: none;
-      }
-      // 첫번째, 두번째 헤더 카드 border 처리
-      &:nth-child(1), &:nth-child(2) {
-          border-left: none;
-          border-right: 2px solid $border-color;
-          border-top: none;
-      }
-      // 3번째 카드 (첫번째 일반 카드) border-left 복구
-      &:nth-child(3) {
-          border-left: 2px solid $border-color;
-      }
-
+    .swiper-slide:not(.swiper-slide-active) {
+        opacity: 0.5;
+        // 다른 이미지들을 흐리게
+        img {
+            filter: grayscale(100%) brightness(0.5);
+        }
     }
-  }
+
+    .swiper-slide-active {
+        opacity: 1;
+        // 활성화된 이미지는 원래대로
+        img {
+            filter: none;
+        }
+    }
 }
 
-// 모바일 반응형 (768px 이하)
-@media (max-width: 768px) {
-  .main-event-grid {
-    display: none;
-  }
 
-  .event-header{
-    height: 10rem;
-  }
-
-  .event-header.mobile-only {
-    @include mobile-header-style;
-    display: flex;
-  }
-
-  .main-event-wrapper {
-    padding: $padding-mobile;
-  }
-
-  #mobile-slider-container {
-    display: block;
-  }
-
+.new-Swiper {
   .swiper-slide {
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    border: 1px solid $border-color;
-    cursor: grab;
-    box-sizing: border-box;
-
-    // 썸네일과 텍스트 박스 스타일
-    .event-card-hover, .event-card-content {
-      position: relative;
-      width: 100%; // 썸네일과 너비 동일하게
-    }
-    
-    .event-card-hover {
-        height: 30.5rem;
-
-        img{
-            width: 100%;
-        }
-    }
-    
-    .event-card-content {
-      justify-content: flex-start;
-      background: #fff;
-      padding: $padding-mobile;
-      height: auto;
-      width: auto;
-    }
-
-    .event-info {
-      .type, .title, .date {
-        color: $text-color;
-      }
+    img{
+      width: 100%; //팝업 이미지 크기 조절
+      height: 450px; //팝업 이미지 크기 조절
+      object-fit: cover;
+      display: block;
+      margin: 0 auto;
     }
   }
+  
 }

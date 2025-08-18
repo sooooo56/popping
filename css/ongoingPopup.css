@@ -1,3 +1,13 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Pretendard", sans-serif;
+  margin: 0;
+}
+
 .main-event-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -49,7 +59,6 @@
   height: 100%;
   opacity: 0;
   transition: opacity 0.3s ease;
-  background-color: #f8f8f8;
 }
 .event-card .event-card-hover img {
   width: 100%;
@@ -119,7 +128,7 @@
 }
 
 .event-info .type {
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 500;
   position: relative;
   padding-left: 20px;
@@ -135,21 +144,33 @@
   height: 8px;
   border-radius: 50%;
 }
-.event-info .type.pink::before {
-  background-color: #ED3DA6;
+.event-info .type.beauty::before {
+  background-color: #FF7BB0;
 }
-.event-info .type.purple::before {
-  background-color: #8E49DE;
+.event-info .type.fashion::before {
+  background-color: #937BFF;
+}
+.event-info .type.living::before {
+  background-color: #5CB6FF;
+}
+.event-info .type.characters::before {
+  background-color: #FFDD1C;
+}
+.event-info .type.food::before {
+  background-color: #FFB428;
+}
+.event-info .type.animation::before {
+  background-color: #E71212;
 }
 .event-info .title {
-  font-size: 1.5rem;
+  font-size: 2rem;
   font-weight: 700;
   color: #000;
   margin-top: 10px;
   line-height: 1.4;
 }
 .event-info .date {
-  font-size: 1rem;
+  font-size: 1.5rem;
   font-weight: 500;
   color: #000;
 }
@@ -233,7 +254,6 @@
     flex-direction: column;
     height: auto;
     border: 1px solid #000;
-    cursor: -webkit-grab;
     cursor: grab;
     box-sizing: border-box;
   }
@@ -246,6 +266,9 @@
   }
   .swiper-slide .event-card-hover img {
     width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
   }
   .swiper-slide .event-card-content {
     justify-content: flex-start;
