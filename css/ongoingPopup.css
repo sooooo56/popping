@@ -8,6 +8,16 @@ body {
   margin: 0;
   color: #000;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  body * {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 767px) {
+  body * {
+    font-size: 1.4rem;
+  }
+}
 
 .main-event-grid {
   display: grid;
@@ -40,7 +50,7 @@ body {
 
 .event-card {
   position: relative;
-  height: 30rem;
+  height: 35rem;
   overflow: hidden;
   cursor: pointer;
 }
@@ -86,7 +96,7 @@ body {
 }
 
 .event-header {
-  height: 30rem;
+  height: 35rem;
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
@@ -94,7 +104,7 @@ body {
   box-sizing: border-box;
 }
 .event-header .event-header-title {
-  font-size: 2.5rem;
+  font-size: 4rem;
   font-weight: 700;
   color: #000;
   line-height: 1.2;
@@ -106,30 +116,21 @@ body {
   font-size: 1.8rem;
   font-weight: 400;
 }
-.event-header .event-header-view-all .icon {
+.event-header .event-header-view-all .icon-calendar {
   display: inline-block;
   width: 20px;
   height: 20px;
   margin-right: 8px;
-  background-size: contain;
+  background-image: url("../img/icon/calendar.png");
   background-repeat: no-repeat;
-}
-.event-header .event-header-view-all .icon.calendar {
-  background-image: url("https://placehold.co/20x20/000000/ffffff?text=C");
-}
-.event-header .event-header-view-all .icon.arrow {
-  width: 12px;
-  height: 12px;
-  margin-left: 8px;
-  background-image: url("https://placehold.co/12x12/000000/ffffff?text=>");
+  background-size: cover;
+  background-position: center;
 }
 
 .event-info .type {
-  font-size: 1.6rem;
   font-weight: 500;
   position: relative;
   padding-left: 15px;
-  color: #000;
 }
 .event-info .type::before {
   content: "";
@@ -191,13 +192,18 @@ body {
   overflow-x: hidden;
 }
 
-.swiper-pagination {
-  margin-top: 20px;
+.swiper .swiper-pagination-bullet-active {
+  background-color: #FF3686;
 }
 
 .swiper-pagination-bullets {
   display: flex;
   justify-content: center;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 2rem;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -240,7 +246,7 @@ body {
   .event-header {
     height: 10rem;
   }
-  .event-header.mobile-only {
+  .event-header .mobile-only {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

@@ -30,6 +30,7 @@ $margin-t80: 8rem; //mo
 
 html {
   font-size: 62.5%; // 1rem = 10px 설정
+
 }
 
 body {
@@ -37,10 +38,23 @@ body {
   font-family: 'Pretendard', sans-serif;
   margin: 0;
   color: $bColor;
+
+  @media (min-width: 768px) and (max-width: 1023px){
+    * {
+      font-size: 1.5rem;
+    }
+  }
+  @media all and (max-width: 767px){
+    * {
+      font-size: 1.4rem;
+    }
+  }
+   
+
 }
 
 
-// 타이틀 스타일 믹스인
+// 타이틀 스타일 믹스인 pc
 @mixin title-style {
   font-size: 4rem;
   font-weight: 700;
@@ -55,3 +69,17 @@ body {
   font-size: 2rem;
   font-weight: 700;
 }
+
+// 타이틀 스타일 믹스인 mo
+@mixin m-title-style {
+  font-size: 3rem;
+}
+
+@mixin m-sub-title-style {
+  font-size: 2rem;
+}
+
+@mixin m-s-title-style {
+  font-size: 1.8rem;
+}
+

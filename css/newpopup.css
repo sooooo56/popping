@@ -8,10 +8,25 @@ body {
   margin: 0;
   color: #000;
 }
+@media (min-width: 768px) and (max-width: 1023px) {
+  body * {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 767px) {
+  body * {
+    font-size: 1.4rem;
+  }
+}
 
 .new-container {
   background-color: #EEEEEE;
   padding: 12rem 0;
+}
+@media (max-width: 768px) {
+  .new-container {
+    padding: 8rem 0;
+  }
 }
 
 .new-title {
@@ -23,6 +38,7 @@ body {
 @media (max-width: 768px) {
   .new-title {
     margin-top: 8rem;
+    font-size: 3rem;
   }
 }
 
@@ -62,17 +78,15 @@ body {
 .new-text .new-txt .new-info {
   padding-top: 20px;
   line-height: 2.5rem;
-  font-size: 1.8rem;
 }
 .new-text .new-txt .new-date {
   padding-top: 1.5rem;
-  font-size: 1.8rem;
 }
 .new-text .new-button a {
   display: inline-block;
   margin-top: 20px;
   padding: 10px 0;
-  color: #333;
+  color: #A3A3A3;
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;

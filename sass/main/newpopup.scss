@@ -4,6 +4,10 @@
 .new-container {
     background-color: var.$grayColor;
     padding: var.$padding-120;
+
+    @media (max-width: 768px) {
+        padding: var.$padding-80;
+    }
 }
 
 .new-title {
@@ -13,6 +17,7 @@
 
     @media (max-width: 768px) {
         margin-top: var.$margin-t80;
+        @include var.m-title-style();
     }
 
 }
@@ -53,12 +58,10 @@
         .new-info {
             padding-top: 20px;
             line-height: 2.5rem;
-            font-size: 1.8rem;
         }
 
         .new-date{
                 padding-top: 1.5rem;
-                font-size: 1.8rem;
             }
 
         
@@ -70,7 +73,7 @@
           display: inline-block;
           margin-top: 20px;
           padding: 10px 0;
-          color: #333;
+          color: var.$grayColor2;
           border-bottom: 2px solid transparent;
           transition: all 0.3s ease;
           position: relative;
@@ -154,3 +157,4 @@
   }
   
 }
+

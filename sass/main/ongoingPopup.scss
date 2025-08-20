@@ -1,6 +1,6 @@
 @use 'variables' as var;
 
-$card-height: 30rem;
+$card-height: 35rem;
 $padding-desktop: 2.5rem;
 $padding-mobile: 1.5rem;
 
@@ -132,7 +132,7 @@ $padding-mobile: 1.5rem;
   box-sizing: border-box;
 
   .event-header-title {
-    @include var.sub-title-style();
+    @include var.title-style();
     color: var.$bColor;
     line-height: 1.2;
     margin: 0;
@@ -144,25 +144,15 @@ $padding-mobile: 1.5rem;
     font-size: 1.8rem;
     font-weight: 400;
 
-    .icon {
+    .icon-calendar {
       display: inline-block;
       width: 20px;
       height: 20px;
       margin-right: 8px;
-      background-size: contain;
+      background-image: url('../img/icon/calendar.png');
       background-repeat: no-repeat;
-
-      // 아이콘 추후 변경하기 (임시로 넣은것)
-      &.calendar {
-        background-image: url('https://placehold.co/20x20/000000/ffffff?text=C');
-      }
-
-      &.arrow {
-        width: 12px;
-        height: 12px;
-        margin-left: 8px;
-        background-image: url('https://placehold.co/12x12/000000/ffffff?text=>');
-      }
+      background-size: cover; 
+      background-position: center;
     }
   }
 }
@@ -170,11 +160,9 @@ $padding-mobile: 1.5rem;
 // 이벤트 정보 스타일
 .event-info {
   .type {
-    font-size: 1.6rem;
     font-weight: 500;
     position: relative;
     padding-left: 15px;
-    color: var.$bColor;
 
     &::before {
       content: '';
@@ -242,12 +230,20 @@ $padding-mobile: 1.5rem;
   overflow-x: hidden;
 }
 
-.swiper-pagination {
-  margin-top: 20px;
+.swiper{
+  .swiper-pagination-bullet-active{
+    background-color: var.$point-color;
+  }
 }
+
 .swiper-pagination-bullets {
     display: flex;
     justify-content: center;
+}
+
+.swiper-pagination {
+  position: relative;
+  margin-top: 2rem; // 점과 팝업(슬라이더) 사이 간격 조절
 }
 
 // 태블릿 반응형 (769px ~ 1024px)
@@ -300,11 +296,11 @@ $padding-mobile: 1.5rem;
 
   .event-header{
     height: 10rem;
-  }
 
-  .event-header.mobile-only {
-    @include mobile-header-style;
-    padding: 1.5rem 0;
+    .mobile-only {
+      @include mobile-header-style;
+      padding: 1.5rem 0;
+    }
   }
 
   
@@ -346,3 +342,4 @@ $padding-mobile: 1.5rem;
 
   }
 }
+
