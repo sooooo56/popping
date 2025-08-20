@@ -1,26 +1,139 @@
-// 네비게이션 변수
-$bgColor:#000;
-$txtColor:#fff;
+@use 'variables' as var;
 
 #navi{
-    background-color: #000;
-    color: #fff;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    background-color: var.$bColor;
+    color: var.$WColor;
 
     .naviInner{
-        width: 70.313%;
-        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         height: 55px;
         align-items: center;
+        margin: 0 auto;
     }
-    
+}
+
+.loog{
+    img {
+        width: 80%;
+        height: auto;
+    }
 }
 
 .rightIcon{
     display: flex;
+    align-items: center;
+    gap: 20px;
 
-    :nth-child(1){
-        padding-right: 12px;
+    a {
+        text-decoration: none;
+        color: var.$WColor;
+        // transition: opacity 0.3s ease, width 0.3s ease;
+    }
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+
+    width: 30px; 
+    transition: width 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+
+    .search-icon {
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+        z-index: 2;
+
+        img {
+            width: 25px;
+            height: auto;
+        }
+    }
+    
+    .close-icon {
+        cursor: pointer;
+        position: absolute;
+        right: 0;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        z-index: 1;
+        img {
+            width: 20px;
+            height: auto;
+        }
+    }
+
+    .search-input {
+        width: 0;
+        padding: 0;
+        border: none;
+        background: transparent;
+        color: var.$WColor;
+        outline: none;
+        // transition: width 0.3s ease-in-out, padding 0.3s ease-in-out;
+    }
+
+    &.active {
+        width: 240px; 
+
+        .search-icon {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        .close-icon {
+            opacity: 1; 
+            z-index: 2;
+        }
+
+        .search-input {
+            border-radius: 4px;
+            width: 180px;
+            background: #5d5d5d;
+            padding: 10px;
+        }
+    }
+}
+
+// 태블릿 (max-width: 1024px)
+@media (max-width: 1024px) {
+    
+    .search-container {
+        width: 20px; 
+        &.active {
+            width: 200px;
+            .search-input {
+                width: 150px;
+            }
+        }
+    }
+}
+
+// 모바일 (max-width: 768px)
+@media (max-width: 768px) {
+
+    .loog {
+        img {
+            width: 70%;
+        }
+    }
+
+    .rightIcon {
+        gap: 10px;
+    }
+    
+    .search-container {
+        width: 40px;
+        &.active {
+            width: 160px;
+            .search-input {
+                width: 110px;
+            }
+        }
     }
 }

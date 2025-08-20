@@ -1,130 +1,114 @@
 @use 'variables' as var;
 
-
-.new-container {
-    background-color: var.$grayColor;
-    padding: 50px 0;
+#news{
+    background-color: var.$bColor;
 }
 
-.new-title {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 20px;
-    padding: 0 20px;
+.news-container{
+    padding: var.$padding-120;
+
+    @media (max-width: 768px) {
+        padding: var.$padding-80-40;
+    }
 }
 
-.new-container-inner {
+.news-container-inner {
     display: flex;
-    align-items: center;
-    padding: 0 20px;
-    
+    gap: 35%;
+
     @media (max-width: 768px) {
         flex-direction: column;
     }
 }
 
-.new-text {
-    width: 30%;
-    padding-right: 50px;
-    
-    @media (max-width: 768px) {
+.news-title {
+    @include var.title-style();
+    margin-bottom: 20px;
+    color: var.$WColor;
+}
+
+.news-list {
+    flex: 2;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+
+}
+
+.news-item {
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    a {
+        display: block;
         width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
+        height: auto;
     }
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.news-text{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    color: var.$grayColor2;
+    @include var.s-title-style();
     
-    .ing-box {
-        display: inline-block;
-        background-color: var.$point-color;
-        padding: 0.3rem 2rem;
-        border-radius: 3.75rem;
-        color: var.$WColor;
-    }
-
-    .new-txt {
-        .new-name {
-            font-size: 1.875rem;
-            font-weight: bold;
-            padding-top: 10px;
-        }
-
-        .new-info {
-            padding-top: 20px;
-        }
-    }
-
-    .new-button {
-        a {
-          display: inline-block;
-          margin-top: 20px;
-          padding: 10px 0;
-          color: #333;
-          border-bottom: 2px solid transparent;
-          transition: all 0.3s ease;
-          position: relative;
-
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background-color: var.$point-color;
-              transform: scaleX(0);
-              transition: transform 0.3s ease;
-            }
-
+    p{
+        a{
             &:hover {
-              font-weight: 800;
-              color: var.$point-color;
-            }
-
-            &:hover::after {
-                transform: scaleX(1);
+            color: var.$WColor;
             }
         }
     }
-}
-
-.new-Swiper {
-    width: 70%;
     
     @media (max-width: 768px) {
-        width: 100%;
-    }
-
-    .swiper-slide {
-        transition: opacity 0.3s ease;
-    }
-
-    .swiper-slide:not(.swiper-slide-active) {
-        opacity: 0.5;
-        // 다른 이미지들을 흐리게
-        img {
-            filter: grayscale(100%) brightness(0.5);
-        }
-    }
-
-    .swiper-slide-active {
-        opacity: 1;
-        // 활성화된 이미지는 원래대로
-        img {
-            filter: none;
-        }
+        padding-top: 4.5rem;
     }
 }
 
+//footer
+.footer {
+    padding: 5rem 0;
+    color: var.$grayColor2;
+    line-height: 2rem;
 
-.new-Swiper {
-  .swiper-slide {
-    img{
-      width: 100%; //팝업 이미지 크기 조절
-      height: 450px; //팝업 이미지 크기 조절
-      object-fit: cover;
-      display: block;
-      margin: 0 auto;
+    .ft-logo{
+        width: 100%;
+        height: 100%;
+        padding-bottom: 1.875rem;
     }
-  }
-  
+
+    p {
+        line-height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+    footer:nth-child(1) {
+        font-weight: bold;
+        font-size: 1.5rem;
+    }
+
+    .footer-links{
+        display: flex;
+        gap: 1.875rem;
+        padding-top: 1.875rem;
+
+        a:after{
+            content: '';
+            display: inline-block;
+            width: 1px;
+            height: 1.5rem;
+            background-color: var.$grayColor2;
+            margin-left: 1.875rem;
+        }
+    }
 }

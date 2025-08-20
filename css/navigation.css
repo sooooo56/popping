@@ -1,19 +1,124 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Pretendard", sans-serif;
+  margin: 0;
+  color: #000;
+}
+
 #navi {
+  position: fixed;
+  width: 100%;
+  z-index: 999;
   background-color: #000;
   color: #fff;
 }
 #navi .naviInner {
-  width: 70.313%;
-  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   height: 55px;
   align-items: center;
+  margin: 0 auto;
+}
+
+.loog img {
+  width: 80%;
+  height: auto;
 }
 
 .rightIcon {
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
-.rightIcon :nth-child(1) {
-  padding-right: 12px;
+.rightIcon a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 30px;
+  transition: width 0.3s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+.search-container .search-icon {
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+.search-container .search-icon img {
+  width: 25px;
+  height: auto;
+}
+.search-container .close-icon {
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1;
+}
+.search-container .close-icon img {
+  width: 20px;
+  height: auto;
+}
+.search-container .search-input {
+  width: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #fff;
+  outline: none;
+}
+.search-container.active {
+  width: 240px;
+}
+.search-container.active .search-icon {
+  opacity: 0;
+  z-index: 1;
+}
+.search-container.active .close-icon {
+  opacity: 1;
+  z-index: 2;
+}
+.search-container.active .search-input {
+  border-radius: 4px;
+  width: 180px;
+  background: #5d5d5d;
+  padding: 10px;
+}
+
+@media (max-width: 1024px) {
+  .search-container {
+    width: 20px;
+  }
+  .search-container.active {
+    width: 200px;
+  }
+  .search-container.active .search-input {
+    width: 150px;
+  }
+}
+@media (max-width: 768px) {
+  .loog img {
+    width: 70%;
+  }
+  .rightIcon {
+    gap: 10px;
+  }
+  .search-container {
+    width: 40px;
+  }
+  .search-container.active {
+    width: 160px;
+  }
+  .search-container.active .search-input {
+    width: 110px;
+  }
 }

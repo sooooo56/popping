@@ -1,15 +1,50 @@
 <link rel="stylesheet" href="./css/navigation.css">
-<link
-rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css"
-/>
 
 <nav id="navi">
-    <div class="naviInner">
-        <div class="leftIcon">로고</div>
+    <div class="naviInner container">
+        
+        <div class="loog">
+            <img src="./img/logo-w.png" alt="logo">
+        </div>
+
+        <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
         <div class="rightIcon">
-            <a href="#"><div>전체일정</div></a>
-            <div><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+            <a href="#" class="full-schedule"><div>전체일정</div></a>
+            
+            <!-- 검색 창과 아이콘을 담는 컨테이너 -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="검색어를 입력하세요">
+                <!-- 돋보기 아이콘 -->
+                <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+                <!-- 닫기 아이콘 -->
+                <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
+
+            </div>
+        
         </div>
     </div>
 </nav>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const searchIcon = document.querySelector('.search-icon');
+        const closeIcon = document.querySelector('.close-icon');
+        const searchContainer = document.querySelector('.search-container');
+        const searchInput = document.querySelector('.search-input');
+        const fullSchedule = document.querySelector('.full-schedule');
+
+        searchIcon.addEventListener('click', () => {
+            searchContainer.classList.add('active');
+            fullSchedule.style.opacity = '0';
+            fullSchedule.style.width = '0';
+            searchInput.focus();
+        });
+
+        closeIcon.addEventListener('click', () => {
+            searchContainer.classList.remove('active');
+            fullSchedule.style.opacity = '1';
+            fullSchedule.style.width = 'auto';
+        });
+    });
+</script>
+

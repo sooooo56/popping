@@ -22,7 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
         },
     });
 
-    // 신규 팝업
+    // fetch('navigation.html') // 'nav.html' 파일을 불러옵니다.
+    //     .then(response => response.text()) // 텍스트 형태로 변환합니다.
+    //     .then(data => {
+    //         // 불러온 HTML 코드를 #nav-placeholder 요소에 삽입합니다.
+    //         document.getElementById('nav-placeholder').innerHTML = data;
+    // });
+
+    
+});
+document.addEventListener('DOMContentLoaded', () => {
+// 신규 팝업
     // 새로운 Swiper 슬라이더 (텍스트와 이미지 동시 변경)
     const newSwiperData = [
         {
@@ -83,5 +93,27 @@ document.addEventListener('DOMContentLoaded', () => {
             },
         },
     });
+});
 
+
+// navi
+document.addEventListener('DOMContentLoaded', () => {
+    const searchIcon = document.querySelector('.search-icon');
+    const closeIcon = document.querySelector('.close-icon');
+    const searchContainer = document.querySelector('.search-container');
+    const searchInput = document.querySelector('.search-input');
+    const fullSchedule = document.querySelector('.full-schedule');
+
+    searchIcon.addEventListener('click', () => {
+        searchContainer.classList.add('active');
+        fullSchedule.style.opacity = '0';
+        fullSchedule.style.width = '0';
+        searchInput.focus();
+    });
+
+    closeIcon.addEventListener('click', () => {
+        searchContainer.classList.remove('active');
+        fullSchedule.style.opacity = '1';
+        fullSchedule.style.width = 'auto';
+    });
 });

@@ -6,6 +6,7 @@ body {
   font-size: 1.6rem;
   font-family: "Pretendard", sans-serif;
   margin: 0;
+  color: #000;
 }
 
 a {
@@ -16,9 +17,12 @@ a {
 .container {
   max-width: 1440px;
   width: 100%;
-  margin: 10rem auto;
-  padding: 0 4rem;
+  margin: 0 auto;
   box-sizing: border-box;
+}
+
+.main-event-container {
+  margin: 12rem auto;
 }
 
 .main-visual-section {
@@ -80,7 +84,6 @@ a {
 .todayPopupInnerTxt .pop-date {
   font-weight: 500;
   font-size: 2.5rem;
-  color: #000;
 }
 
 .main-visual-image {
@@ -131,10 +134,13 @@ a {
 @media (max-width: 768px) {
   .main-visual-section {
     height: 50rem;
+    padding-top: 50px;
   }
   .container {
     padding: 0 4rem;
-    margin: 5rem auto;
+  }
+  .main-event-container {
+    margin: 8rem auto;
   }
   #todayPopup {
     flex-direction: column;

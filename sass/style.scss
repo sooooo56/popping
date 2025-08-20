@@ -1,16 +1,5 @@
 @use 'variables' as var;
 
-// 기본 설정
-html {
-  font-size: 62.5%; // 1rem = 10px 설정
-}
-
-body {
-  font-size: 1.6rem; // 기본 폰트 크기 16px
-  font-family: 'Pretendard', sans-serif;
-  margin: 0;
-}
-
 a{
   text-decoration: none;
   color: inherit;
@@ -18,18 +7,21 @@ a{
 
 // 공통 컨테이너
 .container {
-  max-width: 1440px; // 최대 너비 1440px
+  max-width: 1440px;
   width: 100%;
-  margin: 10rem auto;
-  padding: 0 4rem; // 좌우 여백 (반응형 대비, 40px)
+  margin: 0 auto;
   box-sizing: border-box;
+}
+
+.main-event-container{
+  margin: var.$margin-120;
 }
 
 // 메인 비주얼 섹션 (배경 이미지 및 효과를 위한 래퍼)
 .main-visual-section {
   position: relative;
   width: 100vw;
-  height: 80rem; // 섹션의 높이 (800px)
+  height: 80rem;
   display: flex; 
   justify-content: center; 
   align-items: center;
@@ -69,7 +61,7 @@ a{
   flex-direction: column;
   justify-content: space-between;
   color: var.$bColor;
-  height: 40rem; // (400px)
+  height: 40rem;
   // flex-grow: 1; // 남은 공간을 채우도록 (필요시 활성화)
 
   // "오늘의 팝업 추천"과 "데이즈데이즈 팝업"을 묶는 그룹
@@ -80,21 +72,19 @@ a{
   }
 
   .popup-name {
-    font-size: 4rem; // 40px
-    font-weight: 700;
+    @include var.title-style();
     color: var.$bColor;
   }
 
   .todayPopupTxt {
       color: var.$point-color;
       font-weight: 700;
-      font-size: 3rem; // 30px
+      font-size: 3rem;
   }
 
   .pop-date {
       font-weight: 500;
-      font-size: 2.5rem; // 25px
-      color: var.$bColor;
+      font-size: 2.5rem;
   }
 }
 
@@ -103,12 +93,10 @@ a{
   flex-shrink: 0;
   
   img {
-      width: 40rem; // 400px
-      height: 40rem; // 400px
+      width: 40rem;
+      height: 40rem;
       object-fit: cover;
       display: block;
-      // border-radius: 1rem; 
-      // box-shadow: 0 1rem 3rem rgba(0,0,0,0.2); 
   }
 }
 
@@ -156,11 +144,15 @@ a{
 // 모바일 (max-width: 768px)
 @media (max-width: 768px) {
   .main-visual-section {
-      height: 50rem; // 섹션 높이 조절
+      height: 50rem;
+      padding-top: 50px;
   }
   .container {
       padding: 0 4rem;
-      margin: 5rem auto;
+  }
+
+  .main-event-container{
+    margin: var.$margin-80;
   }
   #todayPopup {
       flex-direction: column;
