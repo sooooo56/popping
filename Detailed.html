@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detailed Page</title>
+
+    <!-- reset-css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+
+    <!-- Pretendard font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/detail.css">
+
+    <!-- js -->
+    <script src="./js/navi.js"></script>
+
+</head>
+<body>
+    <!-- 내비게이션 바-->
+    <nav id="navi">
+        <div class="naviInner container">
+            
+            <div class="loog">
+                <img src="./img/logo-w.png" alt="logo">
+            </div>
+
+            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
+            <div class="rightIcon">
+                <a href="#" class="full-schedule"><div>전체일정</div></a>
+                
+                <!-- 검색 창과 아이콘을 담는 컨테이너 -->
+                <div class="search-container">
+                    <div class="search-input-inner">
+                        <input type="text" class="search-input" placeholder="검색어">
+                        <img src="./img/icon/arrow-right-w.png" alt="화살표" class="icon-arrow">
+                    </div>
+                    <!-- 돋보기 아이콘 -->
+                    <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+                    <!-- 닫기 아이콘 -->
+                    <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="detail" class="container">
+        <div class="left-container">
+            <img src="./img/popup/포켓몬 팝업 - 부산.png" alt="팝업 이미지">
+            <div class="btn-container">
+                <a href="#">공식 페이지</a>
+                <a href="#">네이버 지도</a>
+            </div>
+        </div>
+
+        <div class="right-container">
+            <div class="title-container">
+                <h1 class="title">포켓몬 팝업 - 부산</h1>
+                <p class="date">2025.7.25~2025.8.17.</p>
+            </div>
+
+            <div class="info-container">
+                <div class="info-item">
+                    <h2 class="sub-title">장소</h2>
+                    <p>부산 부산진구 가야대로 772</p>
+                </div class="info-item">
+    
+                <div class="info-item">
+                    <h2 class="sub-title">시간</h2>
+                    <p>월~목 10:30 ~ 20:00<br>
+                    금~일 10:30 ~ 20:30</p>
+                </div class="info-item">
+            </div>
+
+            <div class="info-container">
+                <div class="info-item">
+                    <h2 class="sub-title">입장료</h2>
+                    <p>무료</p>
+                </div class="info-item">
+    
+                <div class="info-item">
+                    <h2 class="sub-title">전화번호</h2>
+                    <p>x</p>
+                </div class="info-item">
+            </div>
+
+            <div class=".info-item pd-bt">
+                <h2 class="sub-title">예약방법</h2>
+                <p>현장 대기</p>
+            </div>
+
+            <div class=".info-item pd-bt">
+                <h2 class="sub-title">팝업 설명</h2>
+                <p>포켓몬 캡슐 스테이션 in 부산행 열차가 들어오고 있습니다. <br>
+                    스탬프 랠리 이벤트 완료 시, QR 승차권 홀더 및 클리어 파일 증정 <br>
+                    운영 일정 및 시간은 백화점 사정에 따라 변경될 수 있습니다.
+                </p>
+            </div>
+
+            <div>//TODO 지도 나중에 삽입하기</div>
+        </div>
+
+    </section>
+</body>
+</html>

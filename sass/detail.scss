@@ -1,0 +1,70 @@
+@use 'variables' as var;
+
+#detail{
+    padding-top: var.$padding-t165;
+    display: flex;
+    gap: 100px;
+}
+
+.left-container{
+    img{
+        width: 100%;
+    }
+
+    .btn-container{
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+
+        a{
+            flex: 1;
+            padding: 2rem;
+            background-color: var.$bColor;
+            color: var.$WColor;
+            text-align: center;
+        }
+    }
+}
+
+.right-container{
+    width: 100%;
+
+    .title-container{
+        padding-bottom: 4rem
+    }
+
+    .title{
+        @include var.title-style;
+        margin-bottom: 2rem;
+    }
+
+    .date{
+        font-size: 2.5rem;
+    }
+
+    .info-container{
+        display: flex;
+        border-top: 1px solid var.$bColor;
+        gap: 2rem;
+    }
+
+    .info-item{
+        flex-grow: 1;
+        padding: 4rem 0;
+
+        .sub-title{
+            @include var.sub-title-style;
+        }
+
+        p{
+            margin-top: 12px;
+            line-height: 2rem;
+        }
+    }
+
+    .pd-bt{
+        padding-bottom: 4rem;
+    }
+}
+
+    

@@ -7,10 +7,7 @@ a{
 
 // 공통 컨테이너
 .container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
+  @include var.container();
 }
 
 .main-event-container{

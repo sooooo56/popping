@@ -1,5 +1,10 @@
 @use 'variables' as var;
 
+// 공통 컨테이너
+.container {
+  @include var.container();
+}
+
 #navi{
     position: fixed;
     width: 100%;
@@ -68,6 +73,28 @@
         }
     }
 
+    .search-input-inner{
+        position: relative;
+        width: 100%;
+
+        .icon-arrow {
+            position: absolute;
+            right: 1.8rem;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 20px;
+            height: 20px;
+            background-color: #333;
+            padding: 5px;
+            border-radius: 5px;
+            cursor: pointer;
+
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+    }
+
+
     .search-input {
         width: 0;
         padding: 0;
@@ -80,6 +107,10 @@
 
     &.active {
         width: 240px; 
+
+        .icon-arrow {
+            opacity: 1;
+        }
 
         .search-icon {
             opacity: 0;

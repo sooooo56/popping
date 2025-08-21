@@ -24,9 +24,14 @@ $margin-80: 8rem auto; //120px auto
 
 $padding-80-40: 8rem 4rem;
 
+//탑 여백
 // 신규 팝업 타이틀 위 여백
 $margin-t240: 24rem; //pc
 $margin-t80: 8rem; //mo
+
+// 네비게이션 여백
+$padding-t55: 5.5rem; //55px
+$padding-t165: 16.5rem;
 
 html {
   font-size: 62.5%; // 1rem = 10px 설정
@@ -49,10 +54,21 @@ body {
       font-size: 1.4rem;
     }
   }
-   
 
 }
 
+a{
+  text-decoration: none;
+  color: inherit;
+}
+
+//공통 컨텐츠 너비
+@mixin container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
 
 // 타이틀 스타일 믹스인 pc
 @mixin title-style {

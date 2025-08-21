@@ -19,6 +19,11 @@ body {
   }
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 .new-container {
   background-color: #EEEEEE;
   padding: 12rem 0;

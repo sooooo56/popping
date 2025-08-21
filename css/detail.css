@@ -1,0 +1,82 @@
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Pretendard", sans-serif;
+  margin: 0;
+  color: #000;
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  body * {
+    font-size: 1.5rem;
+  }
+}
+@media all and (max-width: 767px) {
+  body * {
+    font-size: 1.4rem;
+  }
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+#detail {
+  padding-top: 16.5rem;
+  display: flex;
+  gap: 100px;
+}
+
+.left-container img {
+  width: 100%;
+}
+.left-container .btn-container {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.left-container .btn-container a {
+  flex: 1;
+  padding: 2rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+}
+
+.right-container {
+  width: 100%;
+}
+.right-container .title-container {
+  padding-bottom: 4rem;
+}
+.right-container .title {
+  font-size: 4rem;
+  font-weight: 700;
+  margin-bottom: 2rem;
+}
+.right-container .date {
+  font-size: 2.5rem;
+}
+.right-container .info-container {
+  display: flex;
+  border-top: 1px solid #000;
+  gap: 2rem;
+}
+.right-container .info-item {
+  flex-grow: 1;
+  padding: 4rem 0;
+}
+.right-container .info-item .sub-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+.right-container .info-item p {
+  margin-top: 12px;
+  line-height: 2rem;
+}
+.right-container .pd-bt {
+  padding-bottom: 4rem;
+}
