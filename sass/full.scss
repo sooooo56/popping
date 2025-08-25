@@ -1,0 +1,31 @@
+@use 'variables' as var;
+
+.title{
+    @include var.title-style;
+    margin-bottom: 4rem;
+}
+
+#full-schedule{
+    padding-top: var.$padding-t165;
+}
+
+.content-container{
+    display: flex;
+
+    .left-container{
+        background-color: var.$gray-color;
+        padding: 4rem
+    }
+}
+
+
+.select-container{
+
+    .flex-content{
+        display: flex;
+    }
+
+}
+
+
+

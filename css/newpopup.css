@@ -9,12 +9,12 @@ body {
   color: #000;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  body * {
+  body {
     font-size: 1.5rem;
   }
 }
 @media all and (max-width: 767px) {
-  body * {
+  body {
     font-size: 1.4rem;
   }
 }
@@ -24,6 +24,23 @@ a {
   color: inherit;
 }
 
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
 .new-container {
   background-color: #EEEEEE;
   padding: 12rem 0;
@@ -39,6 +56,16 @@ a {
   font-weight: 700;
   margin-bottom: 4rem;
   margin-top: 24rem;
+}
+@media (max-width: 1023px) {
+  .new-title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .new-title {
+    font-size: 3rem;
+  }
 }
 @media (max-width: 768px) {
   .new-title {
@@ -79,6 +106,16 @@ a {
   font-size: 2.5rem;
   font-weight: 700;
   padding-top: 10px;
+}
+@media (max-width: 1023px) {
+  .new-text .new-txt .new-name {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .new-text .new-txt .new-name {
+    font-size: 2rem;
+  }
 }
 .new-text .new-txt .new-info {
   padding-top: 20px;

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>popping</title>
+
+    <!-- reset-css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
+
+    <!-- Pretendard font -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+
+    <!-- css -->
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/full.css">
+
+    <!-- js -->
+    <script src="./js/navi.js"></script>
+</head>
+<body>
+    <!-- 내비게이션 바-->
+    <nav id="navi">
+        <div class="naviInner container">
+            
+            <div class="loog">
+                <img src="./img/logo-w.png" alt="logo">
+            </div>
+
+            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
+            <div class="rightIcon">
+                <a href="#" class="full-schedule"><div>전체일정</div></a>
+                
+                <!-- 검색 창과 아이콘을 담는 컨테이너 -->
+                <div class="search-container">
+                    <div class="search-input-inner">
+                        <input type="text" class="search-input" placeholder="검색">
+                        <img src="./img/icon/arrow-right-w.png" alt="화살표" class="icon-arrow">
+                    </div>
+                    <!-- 돋보기 아이콘 -->
+                    <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+                    <!-- 닫기 아이콘 -->
+                    <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+<section id="full-schedule" class="container">
+    <h1 class="title">팝업 일정</h1>
+
+    <div class="content-container">
+        <div class="left-container">
+    
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="검색">
+            </div>
+    
+            <div class="select-container">
+                <div class="top-txt flex-content">
+                    <p>기간</p>
+                    <p>초기화</p>
+                </div>
+    
+                <div class="date-btn flex-content">
+                    <div>1개월</div>
+                    <div>3개월</div>
+                    <div>6개월</div>
+                    <div>1년</div>
+                </div>
+    
+                <div class="date-select flex-content">
+                    <div class="start-date">
+                        <input type="date">
+                    </div>
+                    <div class="end-date">
+                        <input type="date">
+                    </div>
+                </div>
+    
+                <div class="category">
+                    <p>해시태그</p>
+                    <div class="category-btn flex-content">
+                        <div>뷰티</div>
+                        <div>패션</div>
+                        <div>리빙</div>
+                        <div>취미</div>
+                        <div>웹툰/애니메이션</div>
+                        <div>음식</div>
+                        <div>캐릭터</div>
+                    </div>
+    
+                    <div class="Search-button">
+                        검색하기
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="right-container">
+            달력이 들어갈 자리
+        </div>
+        
+    </div>
+</section>
+
+</body>
+</html>
