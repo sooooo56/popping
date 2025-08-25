@@ -4,6 +4,13 @@
     padding-top: var.$padding-t165;
     display: flex;
     gap: 100px;
+
+    @media (max-width: 767px){
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    
 }
 
 .left-container{
@@ -22,7 +29,15 @@
             background-color: var.$bColor;
             color: var.$WColor;
             text-align: center;
+            transition: background-color 0.3s ease-in-out;
+
+            &:hover{
+                background-color: var.$point-color;
+                transition: background-color 0.3s ease-in-out;
+            }
         }
+        
+
     }
 }
 
@@ -40,17 +55,34 @@
 
     .date{
         font-size: 2.5rem;
+
+        @media (max-width: 767px){
+            font-size: 2rem;
+        }
     }
 
     .info-container{
         display: flex;
         border-top: 1px solid var.$bColor;
         gap: 2rem;
+
+        @media (max-width: 767px){
+            gap: 0;
+            flex-direction: column;
+        }
     }
 
     .info-item{
         flex-grow: 1;
         padding: 4rem 0;
+
+        @media (max-width: 767px){
+            padding: 3rem 0;
+
+            &:nth-child(2),&:nth-child(4) {
+            padding: 0 0 3rem 0;
+        }
+        }
 
         .sub-title{
             @include var.sub-title-style;
@@ -63,7 +95,9 @@
     }
 
     .pd-bt{
-        padding-bottom: 4rem;
+        padding: 0 0 4rem 0;
+
+
     }
 }
 

@@ -45,14 +45,10 @@ body {
   color: $bColor;
 
   @media (min-width: 768px) and (max-width: 1023px){
-    * {
       font-size: 1.5rem;
-    }
   }
   @media all and (max-width: 767px){
-    * {
       font-size: 1.4rem;
-    }
   }
 
 }
@@ -63,22 +59,51 @@ a{
 }
 
 //공통 컨텐츠 너비
-@mixin container {
+.container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 }
 
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
+
 // 타이틀 스타일 믹스인 pc
 @mixin title-style {
   font-size: 4rem;
   font-weight: 700;
+
+  @media (max-width: 1023px) {
+    font-size: 3.5rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 3rem;
+  }
 }
 
 @mixin sub-title-style {
   font-size: 2.5rem;
   font-weight: 700;
+
+  @media (max-width: 1023px) {
+    font-size: 2.3rem;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 2rem;
+  }
+
 }
 
 @mixin s-title-style {

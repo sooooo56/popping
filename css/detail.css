@@ -9,12 +9,12 @@ body {
   color: #000;
 }
 @media (min-width: 768px) and (max-width: 1023px) {
-  body * {
+  body {
     font-size: 1.5rem;
   }
 }
 @media all and (max-width: 767px) {
-  body * {
+  body {
     font-size: 1.4rem;
   }
 }
@@ -24,10 +24,33 @@ a {
   color: inherit;
 }
 
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+@media (max-width: 1023px) {
+  .container {
+    padding: 0 3rem;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    padding: 0 4rem;
+  }
+}
 #detail {
   padding-top: 16.5rem;
   display: flex;
   gap: 100px;
+}
+@media (max-width: 767px) {
+  #detail {
+    flex-direction: column;
+    gap: 50px;
+  }
 }
 
 .left-container img {
@@ -44,6 +67,11 @@ a {
   background-color: #000;
   color: #fff;
   text-align: center;
+  transition: background-color 0.3s ease-in-out;
+}
+.left-container .btn-container a:hover {
+  background-color: #FF3686;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .right-container {
@@ -57,26 +85,65 @@ a {
   font-weight: 700;
   margin-bottom: 2rem;
 }
+@media (max-width: 1023px) {
+  .right-container .title {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .right-container .title {
+    font-size: 3rem;
+  }
+}
 .right-container .date {
   font-size: 2.5rem;
+}
+@media (max-width: 767px) {
+  .right-container .date {
+    font-size: 2rem;
+  }
 }
 .right-container .info-container {
   display: flex;
   border-top: 1px solid #000;
   gap: 2rem;
 }
+@media (max-width: 767px) {
+  .right-container .info-container {
+    gap: 0;
+    flex-direction: column;
+  }
+}
 .right-container .info-item {
   flex-grow: 1;
   padding: 4rem 0;
 }
+@media (max-width: 767px) {
+  .right-container .info-item {
+    padding: 3rem 0;
+  }
+  .right-container .info-item:nth-child(2), .right-container .info-item:nth-child(4) {
+    padding: 0 0 3rem 0;
+  }
+}
 .right-container .info-item .sub-title {
   font-size: 2.5rem;
   font-weight: 700;
+}
+@media (max-width: 1023px) {
+  .right-container .info-item .sub-title {
+    font-size: 2.3rem;
+  }
+}
+@media (max-width: 767px) {
+  .right-container .info-item .sub-title {
+    font-size: 2rem;
+  }
 }
 .right-container .info-item p {
   margin-top: 12px;
   line-height: 2rem;
 }
 .right-container .pd-bt {
-  padding-bottom: 4rem;
+  padding: 0 0 4rem 0;
 }
