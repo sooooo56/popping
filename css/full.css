@@ -64,6 +64,100 @@ a {
 .content-container {
   display: flex;
 }
-.select-container .flex-content {
+
+.search-bar {
+  width: 100%;
+}
+.search-bar input {
+  padding: 12px 2.4rem;
+  width: 100%;
+  box-sizing: border-box;
+  border: 1.5px solid #000;
+}
+
+.filter {
+  background-color: #000;
+  padding: 3rem 2.4rem;
+  margin-top: 1rem;
+}
+
+.top-txt {
+  color: #fff;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
+}
+
+.select-container {
+  padding-bottom: 4rem;
+}
+
+.date-select .start-date, .date-select .end-date {
   display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.date-select .start-date label, .date-select .end-date label {
+  color: #fff;
+  font-weight: 500;
+}
+.date-select .start-date input, .date-select .end-date input {
+  padding: 8px 2rem;
+  color: #fff;
+  background-color: #3b3b3b;
+  border: none;
+}
+
+.flex-content {
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.date-btn div {
+  padding: 8px 2rem;
+  border: 1px solid #A3A3A3;
+  color: #fff;
+  margin-bottom: 1.5rem;
+  cursor: pointer;
+  font-weight: 200;
+  transition: 0.2s;
+}
+.date-btn div:hover {
+  border: 1px solid #fff;
+  transition: 0.2s;
+}
+
+.category .category-btn .flex-content {
+  margin-bottom: 1rem;
+  justify-content: flex-start;
+}
+.category .category-btn .flex-content div {
+  padding: 4px 2.8rem;
+  text-align: center;
+  border: 1px solid #A3A3A3;
+  border-radius: 10rem;
+  cursor: pointer;
+  color: #A3A3A3;
+  transition: 0.2s;
+}
+.category .category-btn .flex-content div:hover {
+  border: 1px solid #fff;
+  transition: 0.2s;
+  color: #fff;
+}
+
+.Search-button {
+  cursor: pointer;
+  margin-top: 4rem;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 12px 1.25rem;
+  text-align: center;
+  transition: 0.2s;
+}
+.Search-button:hover {
+  background-color: #fff;
+  transition: 0.2s;
+  color: #000;
+  font-weight: 700;
 }

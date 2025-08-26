@@ -11,21 +11,127 @@
 
 .content-container{
     display: flex;
+}
 
-    .left-container{
-        background-color: var.$gray-color;
-        padding: 4rem
+.search-bar{
+    width: 100%;
+    input{
+        padding: 12px 2.4rem;
+        width: 100%;
+        box-sizing: border-box;
+        border: 1.5px solid var.$bColor;
     }
 }
 
+.filter{
+    background-color: var.$bColor;
+    padding: 3rem 2.4rem;
+    margin-top: 1rem;
+}
+
+.top-txt{
+    color: var.$WColor;
+    font-weight: 500;
+    padding-bottom: 1.5rem;
+}
 
 .select-container{
+    padding-bottom: 4rem;
+}
 
-    .flex-content{
+.date-select{
+    .start-date, .end-date{
         display: flex;
+        flex-direction: column;
+        gap: 1rem;
+
+        label{
+            color: var.$WColor;
+            font-weight: 500;
+        }
+
+        input{
+            padding: 8px 2rem;
+            color: var.$WColor;
+            background-color: #3b3b3b;
+            border: none;
+        }
     }
 
 }
+
+
+.flex-content{
+    display: flex;
+    gap: 1rem;
+    justify-content: space-between;
+}
+
+.date-btn{
+    div{
+        padding: 8px 2rem;
+        border: 1px solid var.$grayColor2;
+        color: var.$WColor;
+        margin-bottom: 1.5rem;
+        cursor: pointer;
+        font-weight: 200;
+        transition: 0.2s ;
+
+        &:hover{
+            border: 1px solid var.$WColor;
+            transition: 0.2s;
+        }
+    }
+
+    
+}
+
+.category{
+    .category-btn{
+        .flex-content{
+            margin-bottom: 1rem;
+            justify-content: flex-start;
+            div{
+                padding: 4px 2.8rem;
+                text-align: center;
+                border: 1px solid var.$grayColor2;
+                border-radius: 10rem;
+                cursor: pointer;
+                color: var.$grayColor2;
+                transition: 0.2s ;
+
+                &:hover{
+                    border: 1px solid var.$WColor;
+                    transition: 0.2s;
+                    color: var.$WColor;
+                }
+            }
+
+            
+        }
+    }
+
+}
+
+.Search-button{
+    cursor: pointer;
+    margin-top: 4rem;
+    border: 1px solid var.$WColor;
+    color: var.$WColor;
+    padding: 12px 1.25rem;
+    text-align: center;
+    transition: 0.2s;
+
+    &:hover{
+        background-color: var.$WColor;
+        transition: 0.2s;
+        color: var.$bColor;
+        font-weight: 700;
+    }
+}
+
+
+
 
 
 

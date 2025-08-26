@@ -1,159 +1,74 @@
-html {
-  font-size: 62.5%;
-}
-
+/* variables.scss */
 body {
-  font-size: 1.6rem;
   font-family: "Pretendard", sans-serif;
-  margin: 0;
-  color: #000;
-}
-@media (min-width: 768px) and (max-width: 1023px) {
-  body {
-    font-size: 1.5rem;
-  }
-}
-@media all and (max-width: 767px) {
-  body {
-    font-size: 1.4rem;
-  }
-}
-
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-.container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-
-@media (max-width: 1023px) {
-  .container {
-    padding: 0 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    padding: 0 4rem;
-  }
-}
-#news {
-  background-color: #000;
-}
-
-.news-container {
-  padding: 12rem 0;
-}
-@media (max-width: 768px) {
-  .news-container {
-    padding: 8rem 4rem;
-  }
-}
-
-.news-container-inner {
   display: flex;
-  gap: 35%;
-}
-@media (max-width: 768px) {
-  .news-container-inner {
-    flex-direction: column;
-  }
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f4f4f4;
 }
 
-.news-title {
-  font-size: 4rem;
-  font-weight: 700;
+.calendar {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 20px;
-  color: #fff;
 }
-@media (max-width: 1023px) {
-  .news-title {
-    font-size: 3.5rem;
-  }
+.calendar-header h1 {
+  font-size: 2em;
+  font-weight: 600;
 }
-@media (max-width: 767px) {
-  .news-title {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .news-title {
-    font-size: 3rem;
-  }
+.calendar-header button {
+  padding: 5px 15px;
+  font-size: 1.5em;
+  cursor: pointer;
+  border: none;
+  background: none;
 }
 
-.news-list {
-  flex: 2;
+.calendar-weekdays,
+.calendar-days {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+  gap: 10px;
 }
 
-.news-item {
-  transition: transform 0.3s ease-in-out;
+.calendar-weekdays div {
+  font-weight: 600;
+  color: #333;
 }
-.news-item:hover {
-  transform: translateY(-5px);
-}
-.news-item a {
-  display: block;
-  width: 100%;
-  height: auto;
-}
-.news-item img {
-  display: block;
-  width: 100%;
-  height: auto;
+.calendar-weekdays div:nth-child(1), .calendar-weekdays div:nth-child(7) {
+  color: #f00;
 }
 
-.news-text {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  color: #A3A3A3;
-  font-size: 2rem;
-  font-weight: 700;
-}
-.news-text p a:hover {
-  color: #fff;
-}
-@media (max-width: 768px) {
-  .news-text {
-    padding-top: 4.5rem;
-  }
+.day {
+  padding: 15px 5px;
+  border-radius: 8px;
+  position: relative;
+  cursor: pointer;
 }
 
-.footer {
-  padding: 5rem 0;
-  color: #A3A3A3;
-  line-height: 2rem;
-}
-.footer .ft-logo {
-  width: 100%;
-  height: 100%;
-  padding-bottom: 1.8rem;
-}
-.footer .brand-text {
+.day.is-today {
+  background-color: #e0e0e0;
   font-weight: bold;
-  font-size: 1.6rem;
 }
-.footer p {
-  line-height: 2.5rem;
+
+.event-list {
+  font-size: 0.8em;
+  text-align: left;
+  margin-top: 5px;
 }
-.footer .footer-links {
-  display: flex;
-  gap: 1.875rem;
-  padding-top: 2rem;
-}
-.footer .footer-links a:after {
-  content: "";
-  display: inline-block;
-  width: 1px;
-  height: 1.5rem;
-  background-color: #A3A3A3;
-  margin-left: 1.5rem;
+.event-list li {
+  color: #666;
+  line-height: 1.2;
 }

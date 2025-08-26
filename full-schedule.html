@@ -51,43 +51,54 @@
 
     <div class="content-container">
         <div class="left-container">
-    
+            
             <div class="search-bar">
                 <input type="text" class="search-input" placeholder="검색">
             </div>
     
-            <div class="select-container">
-                <div class="top-txt flex-content">
-                    <p>기간</p>
-                    <p>초기화</p>
-                </div>
-    
-                <div class="date-btn flex-content">
-                    <div>1개월</div>
-                    <div>3개월</div>
-                    <div>6개월</div>
-                    <div>1년</div>
-                </div>
-    
-                <div class="date-select flex-content">
-                    <div class="start-date">
-                        <input type="date">
+            <div class="filter">
+                <div class="select-container">
+                    <!-- 기간 초기화 -->
+                    <div class="top-txt flex-content">
+                        <p>기간</p>
+                        <p>초기화</p>
                     </div>
-                    <div class="end-date">
-                        <input type="date">
+        
+                    <!-- 개월수 선택 버튼 -->
+                    <div class="date-btn flex-content">
+                        <div>1개월</div>
+                        <div>3개월</div>
+                        <div>6개월</div>
+                        <div>1년</div>
+                    </div>
+        
+                    <!-- 날짜 선택 -->
+                    <div class="date-select flex-content">
+                        <div class="start-date">
+                            <input type="date">
+                        </div>
+                        <div class="end-date">
+                            <input type="date">
+                        </div>
                     </div>
                 </div>
-    
+        
                 <div class="category">
-                    <p>해시태그</p>
-                    <div class="category-btn flex-content">
-                        <div>뷰티</div>
-                        <div>패션</div>
-                        <div>리빙</div>
-                        <div>취미</div>
-                        <div>웹툰/애니메이션</div>
-                        <div>음식</div>
-                        <div>캐릭터</div>
+                    <p class="top-txt">해시태그</p>
+                    <div class="category-btn">
+                        <div class="flex-content">
+                            <div>뷰티</div>
+                            <div>패션</div>
+                            <div>취미</div>
+                        </div>
+                        <div class="flex-content">
+                            <div>리빙</div>
+                            <div>웹툰/애니메이션</div>
+                        </div>
+                        <div class="flex-content">
+                            <div>음식</div>
+                            <div>캐릭터</div>
+                        </div>
                     </div>
     
                     <div class="Search-button">
@@ -95,6 +106,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     
         <div class="right-container">
