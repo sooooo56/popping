@@ -63,6 +63,12 @@ a {
 
 .content-container {
   display: flex;
+  gap: 5rem;
+  justify-content: space-around;
+}
+
+.left-container {
+  width: 37%;
 }
 
 .search-bar {
@@ -105,6 +111,7 @@ a {
   color: #fff;
   background-color: #3b3b3b;
   border: none;
+  font-family: "Pretendard", sans-serif;
 }
 
 .flex-content {

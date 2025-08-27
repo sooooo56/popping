@@ -2,7 +2,6 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>popping</title>
 
@@ -12,88 +11,135 @@
     <!-- Pretendard font -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
 
-    <!-- main css -->
+    <!-- css -->
+    <link rel="stylesheet" href="./css/navigation.css">
+    <link rel="stylesheet" href="./css/full.css">
     <link rel="stylesheet" href="./css/test.css">
 
-    
+    <!-- js -->
+    <script src="./js/navi.js"></script>
+    <script src="./js/calendar.js"></script>
+
 </head>
+
 <body>
-    <div class="calendar">
-    <div class="calendar-header">
-        <button id="prevBtn">&lt;</button>
-        <h1 id="currentMonthYear"></h1>
-        <button id="nextBtn">&gt;</button>
-    </div>
-    <div class="calendar-weekdays">
-        <div>Sun</div>
-        <div>Mon</div>
-        <div>Tue</div>
-        <div>Wed</div>
-        <div>Thu</div>
-        <div>Fri</div>
-        <div>Sat</div>
-    </div>
-    <div id="calendarDays" class="calendar-days">
+    <!-- 내비게이션 바-->
+    <nav id="navi">
+        <div class="naviInner container">
+            
+            <div class="loog">
+                <img src="./img/logo-w.png" alt="logo">
+            </div>
+
+            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
+            <div class="rightIcon">
+                <a href="#" class="full-schedule"><div>전체일정</div></a>
+                
+                <!-- 검색 창과 아이콘을 담는 컨테이너 -->
+                <div class="search-container">
+                    <div class="search-input-inner">
+                        <input type="text" class="search-input" placeholder="검색">
+                        <img src="./img/icon/arrow-right-w.png" alt="화살표" class="icon-arrow">
+                    </div>
+                    <!-- 돋보기 아이콘 -->
+                    <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+                    <!-- 닫기 아이콘 -->
+                    <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
+                </div>
+            </div>
         </div>
-</div>
+    </nav>
+
+<section id="full-schedule" class="container">
+    <h1 class="title">팝업 일정</h1>
+
+    <div class="content-container">
+        <div class="left-container">
+            
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="검색">
+            </div>
+    
+            <div class="filter">
+                <div class="select-container">
+                    <!-- 기간 초기화 -->
+                    <div class="top-txt flex-content">
+                        <p>기간</p>
+                        <p>초기화</p>
+                    </div>
+        
+                    <!-- 개월수 선택 버튼 -->
+                    <div class="date-btn flex-content">
+                        <div>1개월</div>
+                        <div>3개월</div>
+                        <div>6개월</div>
+                        <div>1년</div>
+                    </div>
+        
+                    <!-- 날짜 선택 -->
+                    <div class="date-select flex-content">
+                        <div class="start-date">
+                            <input type="date">
+                        </div>
+                        <div class="end-date">
+                            <input type="date">
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="category">
+                    <p class="top-txt">해시태그</p>
+                    <div class="category-btn">
+                        <div class="flex-content">
+                            <div>뷰티</div>
+                            <div>패션</div>
+                            <div>취미</div>
+                        </div>
+                        <div class="flex-content">
+                            <div>리빙</div>
+                            <div>웹툰/애니메이션</div>
+                        </div>
+                        <div class="flex-content">
+                            <div>음식</div>
+                            <div>캐릭터</div>
+                        </div>
+                    </div>
+    
+                    <div class="Search-button">
+                        검색하기
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    
+    <div class="calendar-wrapper">
+        <div class="calendar-header">
+            <h2 id="currentMonthYear">2025.08</h2>
+            <button id="prevBtn" class="nav-btn"><img src="./img/icon/chevron-left.png" alt="왼쪽"></button>
+            <button id="nextBtn" class="nav-btn"><img src="./img/icon/chevron-right.png" alt="오른쪽"></button>
+        </div>
+    
+        <div class="calendar-weekdays">
+            <div>Sun</div>
+            <div>Mon</div>
+            <div>Tue</div>
+            <div>Wed</div>
+            <div>Thu</div>
+            <div>Fri</div>
+            <div>Sat</div>
+        </div>
+    
+        <div id="calendarDays" class="calendar-days"></div>
+        
+    </div>
+        
+    </div>
+</section>
+
 </body>
 
-<script>
-    // calendar.js
-const currentMonthYear = document.getElementById('currentMonthYear');
-const calendarDays = document.getElementById('calendarDays');
-const prevBtn = document.getElementById('prevBtn');
-const nextBtn = document.getElementById('nextBtn');
 
-let currentDate = new Date();
 
-function renderCalendar() {
-    const year = currentDate.getFullYear();
-    const month = currentDate.getMonth();
 
-    // 현재 월의 첫째 날과 마지막 날짜
-    const firstDay = new Date(year, month, 1).getDay(); // 0(일요일) ~ 6(토요일)
-    const lastDate = new Date(year, month + 1, 0).getDate();
-
-    currentMonthYear.textContent = `${year}. ${String(month + 1).padStart(2, '0')}`;
-    calendarDays.innerHTML = ''; // 기존 날짜 초기화
-
-    // 지난 달의 '빈' 날짜들 생성
-    for (let i = 0; i < firstDay; i++) {
-        const emptyDay = document.createElement('div');
-        emptyDay.classList.add('day', 'empty');
-        calendarDays.appendChild(emptyDay);
-    }
-
-    // 현재 월의 날짜들 생성
-    for (let i = 1; i <= lastDate; i++) {
-        const day = document.createElement('div');
-        day.classList.add('day');
-        day.textContent = i;
-        
-        // 여기에 이벤트 데이터를 불러와서 삽입하는 로직 추가
-        // 예: day.innerHTML += '<ul><li>이벤트명</li></ul>';
-
-        // 오늘 날짜 표시
-        if (i === new Date().getDate() && month === new Date().getMonth()) {
-            day.classList.add('is-today');
-        }
-
-        calendarDays.appendChild(day);
-    }
-}
-
-prevBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() - 1);
-    renderCalendar();
-});
-
-nextBtn.addEventListener('click', () => {
-    currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar();
-});
-
-// 페이지 로드 시 달력 렌더링
-document.addEventListener('DOMContentLoaded', renderCalendar);
-</script>
 </html>
