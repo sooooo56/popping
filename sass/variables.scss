@@ -81,6 +81,13 @@ a{
   }
 }
 
+// 클릭 스타일
+@mixin clickable {
+  background-color: $WColor;
+  color: $bColor;
+  font-weight: 500;
+}
+
 // 타이틀 스타일 믹스인 pc
 @mixin title-style {
   font-size: 4rem;

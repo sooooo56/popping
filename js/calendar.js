@@ -100,6 +100,41 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCalendar();
     });
     
-    // ⭐️ 초기 렌더링 호출 위치 수정
     renderCalendar();
+
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const selectedDate = document.querySelectorAll('.date-btn div');
+    const selectedCategory = document.querySelectorAll('.category-btn div div');
+    const resetButton = document.querySelector('.reset-btn');
+
+    function toggleSelection(items) {
+        items.forEach(item => {
+            item.addEventListener('click', (e) => {
+                const isSelected = e.target.classList.contains('selected');
+                
+                if (isSelected) {
+                    e.target.classList.remove('selected');
+                } else {
+                    e.target.classList.add('selected');
+                }
+            });
+        });
+    }
+
+    toggleSelection(selectedDate);
+    toggleSelection(selectedCategory);
+
+    // ⭐️ 초기화 버튼 클릭 이벤트 리스너
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            const allSelectedItems = document.querySelectorAll('.selected');
+            
+            allSelectedItems.forEach(item => {
+                item.classList.remove('selected');
+            });
+        });
+    }
 });

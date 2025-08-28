@@ -18,7 +18,7 @@ $past-day-color: #a0a0a0;
     padding-bottom: 2rem;
 
     h2 {
-        @include var.title-style;
+        @include var.title-style();
     }
 
     .nav-btn {
@@ -71,7 +71,6 @@ $past-day-color: #a0a0a0;
             }
         }
         
-        // ⭐️ 토요일 날짜 색상 적용
         &.saturday {
             .day-number {
                 color: var.$weekend-sat;
