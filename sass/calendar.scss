@@ -1,8 +1,9 @@
 @use 'variables' as var;
 
+// 전체일정 - 캘린더형 css
+
 .calendar-wrapper{
     width: 100%;
-    margin-bottom: 14rem;
 }
 
 // 헤더
@@ -109,4 +110,5 @@
         &.animation::before { background-color: var.$type-animation; }
     }
 }
+
 

@@ -14,10 +14,10 @@
     <!-- css -->
     <link rel="stylesheet" href="./css/navigation.css">
     <link rel="stylesheet" href="./css/full.css">
-    <link rel="stylesheet" href="./css/test.css">
+    <link rel="stylesheet" href="./css/full-list.css">
 
     <!-- js -->
-    <script src="./js/calendar.js"></script>
+    <script src="./js/filter.js"></script>
     <script src="./js/navi.js"></script>
 
 </head>
@@ -31,6 +31,7 @@
                 <img src="./img/logo-w.png" alt="logo">
             </div>
 
+            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
             <div class="rightIcon">
                 <a href="#" class="full-schedule"><div>전체일정</div></a>
                 
@@ -48,9 +49,18 @@
             </div>
         </div>
     </nav>
+    
+    <div class="search-button-fixed">
+        팝업 찾기
+    </div>
+
+    <div class="modal-container">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content"></div>
+    </div>
 
 <section id="full-schedule" class="container">
-    <h1 class="title">팝업 일정</h1>
+    <h1 class="popup-title">팝업 일정</h1>
 
     <div class="view-type">
         <a href="#">리스트형</a>        
@@ -117,33 +127,185 @@
 
         </div>
     
-    <div class="calendar-wrapper">
-        <div class="calendar-header">
-            <h2 id="currentMonthYear">2025.08</h2>
-            <button id="prevBtn" class="nav-btn"><img src="./img/icon/chevron-left.png" alt="왼쪽"></button>
-            <button id="nextBtn" class="nav-btn"><img src="./img/icon/chevron-right.png" alt="오른쪽"></button>
+        <div class="main-event-grid">
+            <!-- 개별 행사 카드 -->
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type beauty">뷰티</span>
+                            <h3 class="title">오아드 팝업 - 인천국제공항</h3>
+                        </div>
+                        <span class="date">25.06.24.(화)~12.31.(수)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/04_오아드 팝업 - 인천국제공항.jpg" alt="행사 썸네일 1">
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type fashion">패션</span>
+                            <h3 class="title">젠틀몬스터 X 브랏츠 팝업</h3>
+                        </div>
+                        <span class="date">25. 05. 30(금) ~ 25. 10. 30(목)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/03_젠틀몬스터x브랏츠 팝업.jpg" alt="행사 썸네일 2">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type living">리빙</span>
+                            <h3 class="title">Alloso 소파다방</h3>
+                        </div>
+                        <span class="date">25.08.08.(금)~11.02.(일)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/08_소파다방.png" alt="행사 썸네일 3">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type fashion">패션</span>
+                            <h3 class="title">누누 부산 팝업스토어</h3>
+                        </div>
+                        <span class="date">25.06.21.(토)~12.31.(수)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/10_누누 부산 팝업스토어.jpg" alt="행사 썸네일 4">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type living">리빙</span>
+                            <h3 class="title">부이 팝업</h3>
+                        </div>
+                        <span class="date">25.07.01(화) ~ 25.09.29(월)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/09_부이팝업.jpg" alt="행사 썸네일 5">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type beauty">뷰티</span>
+                            <h3 class="title">토리든 커넥트 성수</h3>
+                        </div>
+                        <span class="date">25.07.01(화) ~ 25.09.29(월)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/06_토리든 커텍트 성수.jpg" alt="행사 썸네일 6">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type beauty">뷰티</span>
+                            <h3 class="title">북극 오락실 팝업 스토어</h3>
+                        </div>
+                        <span class="date">25.08.06.(수)~08.12.(화)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/05_북극오락실 팝업스토어.jpg" alt="행사 썸네일 7">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type characters">캐릭터</span>
+                            <h3 class="title">포켓몬 팝업 - 부산</h3>
+                        </div>
+                        <span class="date">25.07.25.(금)~08.17.(일)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/포켓몬 팝업 - 부산.png" alt="행사 썸네일 8">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type beauty">뷰티</span>
+                            <h3 class="title">게스케 X 데일리위클리 팝업스토어</h3>
+                        </div>
+                        <span class="date">25.07.31.(목)~미정</span>
+
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/07_게스케 X 데일리위클리 팝업스토어.png" alt="행사 썸네일 9">
+                    </div>
+                </a>
+            </div>
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type fashion">패션</span>
+                            <h3 class="title">데이즈데이즈 팝업</h3>
+                        </div>
+                        <span class="date">25.07.04(금) ~ 25.08.31(일)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/02_데이즈데이즈팝업2.jpg">
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type fashion">패션</span>
+                            <h3 class="title">데이즈데이즈 팝업</h3>
+                        </div>
+                        <span class="date">25.07.04(금) ~ 25.08.31(일)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/02_데이즈데이즈팝업2.jpg">
+                    </div>
+                </a>
+            </div>
+
+            <div class="event-card">
+                <a href="#">
+                    <div class="event-card-content">
+                        <div class="event-info">
+                            <span class="type fashion">패션</span>
+                            <h3 class="title">데이즈데이즈 팝업</h3>
+                        </div>
+                        <span class="date">25.07.04(금) ~ 25.08.31(일)</span>
+                    </div>
+                    <div class="event-card-hover">
+                        <img src="./img/popup/02_데이즈데이즈팝업2.jpg">
+                    </div>
+                </a>
+            </div>
         </div>
-    
-        <div class="calendar-weekdays">
-            <div>Sun</div>
-            <div>Mon</div>
-            <div>Tue</div>
-            <div>Wed</div>
-            <div>Thu</div>
-            <div>Fri</div>
-            <div>Sat</div>
-        </div>
-    
-        <div id="calendarDays" class="calendar-days"></div>
-        
-    </div>
-        
+
     </div>
 </section>
 
 </body>
-
-
-
-
 </html>
+
