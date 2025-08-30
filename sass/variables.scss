@@ -67,18 +67,23 @@ a{
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
-}
 
-@media (max-width: 1023px) {
-  .container {
-    padding: 0 3rem;
-  }
-}
-
-@media (max-width: 767px) {
-  .container {
+  // 1439px ~ 1024px 범위에 적용
+  @media (max-width: 1439px) and (min-width: 1024px) {
+    max-width: 1300px;
     padding: 0 4rem;
   }
+
+  // 1023px ~ 768px 범위에 적용
+  @media (max-width: 1023px) {
+    padding: 0 3rem;
+  }
+
+  // 767px 이하에 적용
+  @media (max-width: 767px) {
+    padding: 0 4rem;
+  }
+
 }
 
 // 클릭 스타일

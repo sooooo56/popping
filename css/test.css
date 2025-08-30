@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   font-size: 62.5%;
 }
@@ -30,7 +31,12 @@ a {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 4rem;
+  }
+}
 @media (max-width: 1023px) {
   .container {
     padding: 0 3rem;
@@ -41,9 +47,10 @@ a {
     padding: 0 4rem;
   }
 }
+
 .calendar-wrapper {
+  display: grid;
   width: 100%;
-  margin-bottom: 14rem;
 }
 
 .calendar-header {
@@ -159,4 +166,48 @@ a {
 }
 .event-list .event-item.animation::before {
   background-color: #E71212;
+}
+
+/* --------------------------------- */
+/* ⭐️ 모바일 스타일 (768px 이하) */
+@media (max-width: 768px) {
+  .calendar-wrapper {
+    display: block;
+    padding: 0;
+  }
+  .calendar-weekdays {
+    display: none;
+  }
+  .calendar-days {
+    display: block;
+    border-top: 2px solid #000;
+  }
+  .calendar-days .day-cell {
+    display: block;
+    border-bottom: 2px solid #000;
+    padding: 1.5rem 0;
+  }
+  .calendar-days .day-cell.past-day, .calendar-days .day-cell.next-month-day {
+    display: none; /* 지난달/다음달 날짜는 숨기기 */
+  }
+  .calendar-days .day-cell .day-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #000;
+    margin-bottom: 1rem;
+  }
+  .event-list {
+    list-style: none;
+    padding: 0;
+  }
+  .event-list .event-item {
+    font-size: 1.6rem;
+    position: relative;
+    padding-left: 20px;
+    margin-top: 0.8rem;
+  }
+  .event-list .event-item::before {
+    width: 8px;
+    height: 8px;
+  }
 }

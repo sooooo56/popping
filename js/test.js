@@ -13,10 +13,10 @@ document.addEventListener('DOMContentLoaded', () => {
             { name: '음뽀챠무 떡집 팝업', type: 'characters' }
         ],
         '2025-08-31': [
-            { name: '임시', type: 'living' }
+            { name: '코엑스 페스티벌', type: 'event' }
         ],
         '2025-09-01': [
-            { name: '임시', type: 'food' }
+            { name: '오토살롱위크', type: 'exhibition' }
         ],
     };
 

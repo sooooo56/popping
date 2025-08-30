@@ -97,19 +97,21 @@
             content: "";
             position: absolute;
             top: 50%;
-            left: 48.5%;
-            width: 1rem; // 선의 길이
+            left: 50%;
+            width: 5px; // 선의 길이
             height: 1px;
             background-color: var.$grayColor2;
             transform: translate(-50%, -50%);
         }
 
         input{
-            padding: 8px 2rem;
+            padding: 8px 0;
             color: var.$WColor;
             background-color: #3b3b3b;
             border: none;
             font-family: "Pretendard", sans-serif;
+            text-align: center;
+            width: 100%;
         }
 
     }
@@ -125,13 +127,15 @@
 
 .date-btn{
     div{
-        padding: 8px 2rem;
+        padding: 8px 0;
         border: 1px solid var.$grayColor2;
         color: var.$WColor;
         margin-bottom: 1.5rem;
         cursor: pointer;
         font-weight: 200;
         transition: 0.2s ;
+        width: calc(100%/4);
+        text-align: center;
 
         &:hover{
             border: 1px solid var.$WColor;
@@ -201,6 +205,13 @@
 }
 
 @media (max-width: 1024px) {
+    #full-schedule{
+        padding-top: 10.5rem;
+        .view-type{
+            padding: 0;
+        }
+    }
+
     .left-container {
         display: none;
     }
@@ -244,9 +255,6 @@
             .filter {
                 padding: 0;
             }
-            .Search-button {
-                background-color: transparent;
-            }
         }
 
     }
@@ -283,6 +291,8 @@
             .modal-close-btn{
                 border: none;
                 background: none;
+                padding-bottom: 1rem;
+                cursor: pointer;
             }
             
         }
@@ -302,14 +312,35 @@
             background-color: #3b3b3b; 
             padding: 3rem 2.4rem;
             margin-top: 1rem;
-        }
 
-        .Search-button {
-            margin-top: 4rem;
-            color: var.$WColor;
-            border: 1px solid var.$WColor;
-            background-color: transparent;
+            .Search-button {
+                margin-top: 4rem;
+                color: var.$WColor;
+                border: 1px solid var.$WColor;
+                background-color: transparent;
+            }
         }
     }
+
+    .category {
+        .category-btn {
+            .flex-content {
+                div{
+                    width: 100%;
+                    padding: 8px 0;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .top-txt{
+        padding-top: 10px;
+
+    }
+
+
+
 }
+
 

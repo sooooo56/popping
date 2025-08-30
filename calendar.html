@@ -17,8 +17,9 @@
     <link rel="stylesheet" href="./css/calendar.css">
 
     <!-- js -->
-    <script src="./js/calendar.js"></script>
+    <script src="./js/filter.js"></script>
     <script src="./js/navi.js"></script>
+    <script src="./js/calendar.js"></script>
 
 </head>
 
@@ -31,6 +32,7 @@
                 <img src="./img/logo-w.png" alt="logo">
             </div>
 
+            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
             <div class="rightIcon">
                 <a href="#" class="full-schedule"><div>전체일정</div></a>
                 
@@ -48,6 +50,15 @@
             </div>
         </div>
     </nav>
+    
+    <div class="search-button-fixed">
+        팝업 찾기
+    </div>
+
+    <div class="modal-container">
+        <div class="modal-backdrop"></div>
+        <div class="modal-content"></div>
+    </div>
 
 <section id="full-schedule" class="container">
     <h1 class="popup-title">팝업 일정</h1>
@@ -136,11 +147,12 @@
     
         <div id="calendarDays" class="calendar-days"></div>
         
-    </div>
         
+    </div>
+
     </div>
 </section>
 
 </body>
-
 </html>
+

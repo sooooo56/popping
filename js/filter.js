@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const selectedDate = document.querySelectorAll('.date-btn div');
-    const selectedCategory = document.querySelectorAll('.category-btn div div');
+    const selectedCategory = document.querySelectorAll('.category-btn .flex-content div');
     const resetButton = document.querySelector('.reset-btn');
 
     function toggleSelection(items) {
@@ -32,30 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// 모달 팝업 기능
-// document.addEventListener('DOMContentLoaded', () => {
-//     const searchButtonFixed = document.querySelector('.search-button-fixed');
-//     const modalContainer = document.querySelector('.modal-container');
-//     const modalCloseBtn = document.querySelector('.modal-close-btn');
-//     const modalBackdrop = document.querySelector('.modal-backdrop');
-
-//     // '팝업 찾기' 버튼 클릭 시 모달 열기
-//     searchButtonFixed.addEventListener('click', () => {
-//         modalContainer.classList.add('active');
-//         document.body.style.overflow = 'hidden'; // 뒤 스크롤 방지
-//     });
-
-//     // 닫기 버튼 또는 배경 클릭 시 모달 닫기
-//     const closeModal = () => {
-//         modalContainer.classList.remove('active');
-//         document.body.style.overflow = ''; // 스크롤 복원
-//     };
-    
-//     modalCloseBtn.addEventListener('click', closeModal);
-//     modalBackdrop.addEventListener('click', closeModal);
-// });
-
-/////////////////////////////////
 
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -65,7 +41,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentContainer = document.querySelector('.content-container');
 
     // 모달 컨테이너를 동적으로 생성합니다.
-    // HTML에 직접 작성할 필요가 없어 더 깔끔합니다.
     const modalContainer = document.createElement('div');
     modalContainer.className = 'modal-container';
     modalContainer.innerHTML = `
