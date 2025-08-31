@@ -24,27 +24,11 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
-}
-@media (max-width: 1439px) and (min-width: 1024px) {
-  .container {
-    max-width: 1300px;
-    padding: 0 4rem;
-  }
-}
-@media (max-width: 1023px) {
-  .container {
-    padding: 0 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    padding: 0 4rem;
-  }
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
 }
 
 #detail {
@@ -52,7 +36,7 @@ a {
   display: flex;
   gap: 100px;
 }
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   #detail {
     flex-direction: column;
     gap: 50px;

@@ -93,12 +93,12 @@ button {
 }
 @media (max-width: 1023px) {
   .new-text .new-txt .new-name {
-    font-size: 2rem;
+    font-size: 2.3rem;
   }
 }
 @media (max-width: 767px) {
   .new-text .new-txt .new-name {
-    font-size: 1.6rem;
+    font-size: 2rem;
   }
 }
 .new-text .new-txt .new-info {
@@ -116,7 +116,7 @@ button {
   border-bottom: 2px solid transparent;
   transition: all 0.3s ease;
   position: relative;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
 }
 .new-text .new-button a::after {

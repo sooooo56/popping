@@ -37,8 +37,16 @@
     a {
         text-decoration: none;
         color: var.$WColor;
-        // transition: opacity 0.3s ease, width 0.3s ease;
+        transition: opacity 0.3s ease, width 0.3s ease, margin-right 0.3s ease;
+        overflow: hidden;
     }
+
+    .hidden {
+        opacity: 0;
+        width: 0;
+        margin-right: 0;
+    }
+
 }
 
 .search-container {
@@ -80,7 +88,7 @@
 
         .icon-arrow {
             position: absolute;
-            right: 1.8rem;
+            right: .8rem;
             top: 50%;
             transform: translateY(-50%);
             width: 20px;
@@ -125,7 +133,7 @@
 
         .search-input {
             border-radius: 4px;
-            width: 180px;
+            width: 190px;
             background: #5d5d5d;
             padding: 10px;
         }
@@ -138,9 +146,9 @@
     .search-container {
         width: 20px; 
         &.active {
-            width: 200px;
+            width: 207px;
             .search-input {
-                width: 150px;
+                width: 160px;
             }
         }
     }
@@ -162,9 +170,9 @@
     .search-container {
         width: 40px;
         &.active {
-            width: 160px;
+            width: 170px;
             .search-input {
-                width: 110px;
+                width: 120px;
             }
         }
     }

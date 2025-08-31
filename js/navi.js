@@ -8,14 +8,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     searchIcon.addEventListener('click', () => {
         searchContainer.classList.add('active');
-        fullSchedule.style.opacity = '0';
-        fullSchedule.style.width = '0';
+        fullSchedule.classList.add('hidden');
         searchInput.focus();
     });
 
     closeIcon.addEventListener('click', () => {
         searchContainer.classList.remove('active');
-        fullSchedule.style.opacity = '1';
-        fullSchedule.style.width = 'auto';
+        fullSchedule.classList.remove('hidden');
     });
 });

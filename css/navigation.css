@@ -82,6 +82,13 @@ button {
 .rightIcon a {
   text-decoration: none;
   color: #fff;
+  transition: opacity 0.3s ease, width 0.3s ease, margin-right 0.3s ease;
+  overflow: hidden;
+}
+.rightIcon .hidden {
+  opacity: 0;
+  width: 0;
+  margin-right: 0;
 }
 
 .search-container {
@@ -119,7 +126,7 @@ button {
 }
 .search-container .search-input-inner .icon-arrow {
   position: absolute;
-  right: 1.8rem;
+  right: 0.8rem;
   top: 50%;
   transform: translateY(-50%);
   width: 20px;
@@ -155,7 +162,7 @@ button {
 }
 .search-container.active .search-input {
   border-radius: 4px;
-  width: 180px;
+  width: 190px;
   background: #5d5d5d;
   padding: 10px;
 }
@@ -165,10 +172,10 @@ button {
     width: 20px;
   }
   .search-container.active {
-    width: 200px;
+    width: 207px;
   }
   .search-container.active .search-input {
-    width: 150px;
+    width: 160px;
   }
 }
 @media (max-width: 768px) {
@@ -182,9 +189,9 @@ button {
     width: 40px;
   }
   .search-container.active {
-    width: 160px;
+    width: 170px;
   }
   .search-container.active .search-input {
-    width: 110px;
+    width: 120px;
   }
 }

@@ -67,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } else {
             // 데스크톱 화면일 때: left-container가 모달 안에 있으면 원래 위치로 되돌립니다.
             if (modalContent.contains(leftContainer)) {
-                contentContainer.prepend(leftContainer); // 원래 위치로 돌려놓기
+                contentContainer.prepend(leftContainer);
             }
         }
     };
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // '팝업 찾기' 버튼 클릭 시 모달 열기
     searchButtonFixed.addEventListener('click', () => {
         modalContainer.classList.add('active');
-        document.body.style.overflow = 'hidden'; // 뒷 배경 스크롤 방지
+        document.body.style.overflow = 'hidden';
     });
 
     // 모달 닫기 버튼 또는 배경 클릭 시 모달 닫기
