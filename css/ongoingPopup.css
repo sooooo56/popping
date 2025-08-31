@@ -24,28 +24,19 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
 }
 
-@media (max-width: 1023px) {
-  .container {
-    padding: 0 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    padding: 0 4rem;
-  }
-}
 .main-event-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-left: 2px solid #000;
   border-top: 2px solid #000;
+  margin: 12rem 0;
 }
 .main-event-grid .event-card {
   border-right: 2px solid #000;
@@ -193,17 +184,18 @@ a {
   background-color: #E71212;
 }
 .event-info .title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   color: #000;
   margin-top: 10px;
   line-height: 1.4;
 }
-.event-info .date {
+
+.date {
   font-size: 1.5rem;
 }
 @media (max-width: 768px) {
-  .event-info .date {
+  .date {
     display: inline-block;
     padding-top: 5px;
     font-weight: 300;
@@ -227,15 +219,14 @@ a {
 .swiper .swiper-pagination-bullet-active {
   background-color: #FF3686;
 }
+.swiper .swiper-pagination {
+  margin-top: 2rem;
+  position: relative;
+}
 
 .swiper-pagination-bullets {
   display: flex;
   justify-content: center;
-}
-
-.swiper-pagination {
-  position: relative;
-  margin-top: 2rem;
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -288,6 +279,7 @@ a {
   }
   #mobile-slider-container {
     display: block;
+    margin: 8rem 0;
   }
   .swiper-slide {
     display: flex;
@@ -302,7 +294,7 @@ a {
     width: 100%;
   }
   .swiper-slide .event-card-hover {
-    height: 31.5rem;
+    height: 28.5rem;
   }
   .swiper-slide .event-card-hover img {
     width: 100%;

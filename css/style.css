@@ -24,6 +24,13 @@ a {
   color: inherit;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -35,6 +42,12 @@ a {
   margin: 0 auto;
   box-sizing: border-box;
 }
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 4rem;
+  }
+}
 @media (max-width: 1023px) {
   .container {
     padding: 0 3rem;
@@ -42,12 +55,12 @@ a {
 }
 @media (max-width: 767px) {
   .container {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 }
 
 .main-event-container {
-  margin: 12rem auto;
+  margin: #EEEEEE auto;
 }
 
 .main-visual-section {
@@ -100,6 +113,16 @@ a {
   font-size: 4rem;
   font-weight: 700;
   color: #000;
+}
+@media (max-width: 1023px) {
+  .todayPopupInnerTxt .popup-name {
+    font-size: 3.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .todayPopupInnerTxt .popup-name {
+    font-size: 3rem;
+  }
 }
 .todayPopupInnerTxt .todayPopupTxt {
   color: #FF3686;

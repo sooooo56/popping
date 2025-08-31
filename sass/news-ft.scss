@@ -5,19 +5,19 @@
 }
 
 .news-container{
-    padding: var.$padding-120;
-
     @media (max-width: 768px) {
-        padding: var.$padding-80-40;
+        padding: 8rem 4rem;
     }
 }
 
 .news-container-inner {
     display: flex;
     gap: 35%;
+    padding-top: var.$pc;
 
     @media (max-width: 768px) {
         flex-direction: column;
+        padding-top: var.$mo;
     }
 }
 
@@ -26,9 +26,6 @@
     margin-bottom: 20px;
     color: var.$WColor;
 
-    @media (max-width: 768px) {
-        @include var.m-title-style();
-    }
 }
 
 .news-list {
@@ -65,6 +62,7 @@
     gap: 2rem;
     color: var.$grayColor2;
     @include var.s-title-style();
+    padding-bottom: var.$pc;
     
     p{
         a{
@@ -76,6 +74,7 @@
     
     @media (max-width: 768px) {
         padding-top: 4.5rem;
+        padding-bottom: var.$mo;
     }
 }
 

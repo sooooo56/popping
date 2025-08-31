@@ -24,11 +24,24 @@ a {
   color: inherit;
 }
 
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
+}
+
 .container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
+}
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 4rem;
+  }
 }
 @media (max-width: 1023px) {
   .container {
@@ -37,7 +50,7 @@ a {
 }
 @media (max-width: 767px) {
   .container {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 }
 

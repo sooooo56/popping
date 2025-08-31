@@ -21,14 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
             clickable: true,
         },
     });
-
-    // fetch('navigation.html') // 'nav.html' 파일을 불러옵니다.
-    //     .then(response => response.text()) // 텍스트 형태로 변환합니다.
-    //     .then(data => {
-    //         // 불러온 HTML 코드를 #nav-placeholder 요소에 삽입합니다.
-    //         document.getElementById('nav-placeholder').innerHTML = data;
-    // });
-
     
 });
 document.addEventListener('DOMContentLoaded', () => {

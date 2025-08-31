@@ -3,22 +3,17 @@
 
 .new-container {
     background-color: var.$grayColor;
-    padding: var.$padding-120;
-
+    padding: var.$pc 0;
+    
     @media (max-width: 768px) {
-        padding: var.$padding-80;
+        padding: var.$mo 0;
+        margin-top: 4rem;
     }
 }
 
 .new-title {
     @include var.title-style();
-    margin-bottom: 4rem;
-    margin-top: var.$margin-t240;
-
-    @media (max-width: 768px) {
-        margin-top: var.$margin-t80;
-        @include var.m-title-style();
-    }
+    padding-bottom: var.$mo;
 
 }
 

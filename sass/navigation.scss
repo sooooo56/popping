@@ -2,6 +2,7 @@
 
 // 공통 컨테이너
 .container {
+    
   @include var.container();
 }
 

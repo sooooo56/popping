@@ -30,7 +30,12 @@ a {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
+@media (max-width: 1439px) and (min-width: 1024px) {
+  .container {
+    max-width: 1300px;
+    padding: 0 4rem;
+  }
+}
 @media (max-width: 1023px) {
   .container {
     padding: 0 3rem;
@@ -41,6 +46,7 @@ a {
     padding: 0 4rem;
   }
 }
+
 #detail {
   padding-top: 16.5rem;
   display: flex;

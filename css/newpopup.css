@@ -24,23 +24,13 @@ a {
   color: inherit;
 }
 
-.container {
-  max-width: 1440px;
-  width: 100%;
-  margin: 0 auto;
-  box-sizing: border-box;
+button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: "Pretendard", sans-serif;
 }
 
-@media (max-width: 1023px) {
-  .container {
-    padding: 0 3rem;
-  }
-}
-@media (max-width: 767px) {
-  .container {
-    padding: 0 4rem;
-  }
-}
 .new-container {
   background-color: #EEEEEE;
   padding: 12rem 0;
@@ -48,14 +38,14 @@ a {
 @media (max-width: 768px) {
   .new-container {
     padding: 8rem 0;
+    margin-top: 4rem;
   }
 }
 
 .new-title {
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 4rem;
-  margin-top: 24rem;
+  padding-bottom: 8rem;
 }
 @media (max-width: 1023px) {
   .new-title {
@@ -64,12 +54,6 @@ a {
 }
 @media (max-width: 767px) {
   .new-title {
-    font-size: 3rem;
-  }
-}
-@media (max-width: 768px) {
-  .new-title {
-    margin-top: 8rem;
     font-size: 3rem;
   }
 }
@@ -109,12 +93,12 @@ a {
 }
 @media (max-width: 1023px) {
   .new-text .new-txt .new-name {
-    font-size: 2.3rem;
+    font-size: 2rem;
   }
 }
 @media (max-width: 767px) {
   .new-text .new-txt .new-name {
-    font-size: 2rem;
+    font-size: 1.6rem;
   }
 }
 .new-text .new-txt .new-info {

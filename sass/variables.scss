@@ -19,17 +19,11 @@ $type-characters: #FFDD1C;
 $type-animation: #E71212;
 
 // 마진 및 패딩
-$padding-120: 12rem 0; //120px
-$margin-120: 12rem auto; //120px auto
+$pc: 12rem; //120px
+$mo:8rem; //80px
 
-$padding-80: 8rem 0; //80px
-$margin-80: 8rem auto; //120px auto
-
-$padding-80-40: 8rem 4rem;
-
-//탑 여백
 // 신규 팝업 타이틀 위 여백
-$margin-t240: 24rem; //pc
+$pc-title: 24rem; //pc
 $margin-t80: 8rem; //mo
 
 // 네비게이션 여백
@@ -61,8 +55,15 @@ a{
   color: inherit;
 }
 
+button{
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-family: 'Pretendard', sans-serif;
+}
+
 //공통 컨텐츠 너비
-.container {
+@mixin container {
   max-width: 1440px;
   width: 100%;
   margin: 0 auto;
@@ -81,7 +82,7 @@ a{
 
   // 767px 이하에 적용
   @media (max-width: 767px) {
-    padding: 0 4rem;
+    padding: 0 2rem;
   }
 
 }
@@ -122,20 +123,7 @@ a{
 }
 
 @mixin s-title-style {
-  font-size: 2rem;
-  font-weight: 700;
-}
-
-// 타이틀 스타일 믹스인 mo
-@mixin m-title-style {
-  font-size: 3rem;
-}
-
-@mixin m-sub-title-style {
-  font-size: 2rem;
-}
-
-@mixin m-s-title-style {
   font-size: 1.8rem;
+  font-weight: 700;
 }
 

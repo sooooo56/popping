@@ -11,7 +11,7 @@ a{
 }
 
 .main-event-container{
-  margin: var.$margin-120;
+  margin: var.$grayColor auto;
 }
 
 // 메인 비주얼 섹션 (배경 이미지 및 효과를 위한 래퍼)
@@ -143,7 +143,7 @@ a{
   }
 
   .main-event-container{
-    margin: var.$margin-80;
+    margin: var.$mo auto;
   }
   #todayPopup {
       flex-direction: column;

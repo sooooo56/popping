@@ -33,6 +33,7 @@ $padding-mobile: 1.5rem;
   grid-template-columns: repeat(4, 1fr);
   border-left: 2px solid var.$bColor;
   border-top: 2px solid var.$bColor;
+  margin: var.$pc 0;
 
   .event-card {
     border-right: 2px solid var.$bColor;
@@ -201,7 +202,7 @@ $padding-mobile: 1.5rem;
     margin-top: 10px;
     line-height: 1.4;
   }
-
+}
   .date {
     font-size: 1.5rem;
 
@@ -211,7 +212,7 @@ $padding-mobile: 1.5rem;
       font-weight: 300;
       }
   }
-}
+
 
 // 데스크톱에서만 보이는 요소
 .desktop-only {
@@ -228,11 +229,17 @@ $padding-mobile: 1.5rem;
   display: none;
   width: 100%;
   overflow-x: hidden;
+  
 }
 
 .swiper{
   .swiper-pagination-bullet-active{
     background-color: var.$point-color;
+  }
+
+  .swiper-pagination {
+    margin-top: 2rem;
+    position: relative;
   }
 }
 
@@ -241,10 +248,7 @@ $padding-mobile: 1.5rem;
     justify-content: center;
 }
 
-.swiper-pagination {
-  position: relative;
-  margin-top: 2rem; // 점과 팝업(슬라이더) 사이 간격 조절
-}
+
 
 // 태블릿 반응형 (769px ~ 1024px)
 @media (min-width: 769px) and (max-width: 1024px) {
@@ -306,6 +310,7 @@ $padding-mobile: 1.5rem;
   
   #mobile-slider-container {
     display: block;
+    margin: var.$mo 0;
   }
 
   .swiper-slide {
@@ -323,7 +328,7 @@ $padding-mobile: 1.5rem;
     }
     
     .event-card-hover {
-        height: 31.5rem;
+        height: 28.5rem;
 
         img{
             width: 100%;
@@ -342,4 +347,5 @@ $padding-mobile: 1.5rem;
 
   }
 }
+
 
