@@ -35,6 +35,12 @@ button {
   background-color: #EEEEEE;
   padding: 12rem 0;
 }
+@media (max-width: 1420px) {
+  .new-container {
+    padding: 8rem 0;
+    margin-top: 6rem;
+  }
+}
 @media (max-width: 768px) {
   .new-container {
     padding: 8rem 0;

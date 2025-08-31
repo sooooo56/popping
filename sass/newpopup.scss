@@ -4,6 +4,11 @@
 .new-container {
     background-color: var.$grayColor;
     padding: var.$pc 0;
+
+    @media (max-width: 1420px) {
+        padding: var.$mo 0;
+        margin-top: 6rem;
+    }
     
     @media (max-width: 768px) {
         padding: var.$mo 0;
@@ -120,7 +125,6 @@
 
     .swiper-slide:not(.swiper-slide-active) {
         opacity: 0.5;
-        // 다른 이미지들을 흐리게
         img {
             filter: grayscale(100%) brightness(0.5);
         }
@@ -128,7 +132,6 @@
 
     .swiper-slide-active {
         opacity: 1;
-        // 활성화된 이미지는 원래대로
         img {
             filter: none;
         }
