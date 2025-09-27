@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>popping</title>
 
+    <!-- favicon -->
+    <link rel="icon" href="./img/favicon.svg">
+
     <!-- reset-css -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@4.0.1/reset.min.css" />
 
@@ -26,29 +29,29 @@
 <body>
     <!-- 내비게이션 바-->
     <nav id="navi">
-        <div class="naviInner container">
-            
-            <div class="loog">
-                <img src="./img/logo-w.png" alt="logo">
-            </div>
+      <div class="naviInner container">
+          
+        <a href="index.html" class="loog">
+            <img src="./img/logo-w.png" alt="logo">
+        </a>
 
-            <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
-            <div class="rightIcon">
-                <a href="#" class="full-schedule"><div>전체일정</div></a>
-                
-                <!-- 검색 창과 아이콘을 담는 컨테이너 -->
-                <div class="search-container">
-                    <div class="search-input-inner">
-                        <input type="text" class="search-input" placeholder="검색">
-                        <img src="./img/icon/arrow-right-w.png" alt="화살표" class="icon-arrow">
-                    </div>
-                    <!-- 돋보기 아이콘 -->
-                    <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
-                    <!-- 닫기 아이콘 -->
-                    <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
-                </div>
-            </div>
+        <!-- 텍스트 대신 전체 일정 아이콘 추가 -->
+        <div class="rightIcon">
+          <a href="full-schedule.html" class="full-schedule">전체일정</a>
+          
+          <!-- 검색 창과 아이콘을 담는 컨테이너 -->
+          <div class="search-container">
+              <div class="search-input-inner">
+                  <input type="text" class="search-input" placeholder="검색어">
+                  <img src="./img/icon/arrow-right-w.png" alt="화살표" class="icon-arrow">
+              </div>
+              <!-- 돋보기 아이콘 -->
+              <div class="search-icon"><img src="./img/icon/search.png" alt="돋보기아이콘"></div>
+              <!-- 닫기 아이콘 -->
+              <div class="close-icon"><img src="./img/icon/close-big-w.png" alt="닫기아이콘"></div>
+          </div>
         </div>
+      </div>
     </nav>
     
     <div class="search-button-fixed">
@@ -64,8 +67,8 @@
     <h1 class="popup-title">팝업 일정</h1>
 
     <div class="view-type">
-        <a href="#" class="list-btn">리스트형</a>        
-        <a href="#" class="calendar-btn">캘린더형</a>        
+        <a href="full-schedule.html" class="list-btn">리스트형</a>        
+        <a href="full-schedule.html" class="calendar-btn">캘린더형</a>        
     </div>
 
     <div class="content-container">
