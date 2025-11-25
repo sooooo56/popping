@@ -1,3 +1,36 @@
+document.addEventListener('DOMContentLoaded', () => {
+    
+    // 1. Desktop Accordion Logic (PC용 아코디언)
+    const desktopItems = document.querySelectorAll('.desktop-banner .banner-item');
+    if(desktopItems.length > 0) {
+        desktopItems.forEach(item => {
+            item.addEventListener('click', () => {
+                // 모든 아이템 active 제거
+                desktopItems.forEach(el => el.classList.remove('active'));
+                // 클릭한 아이템 active 추가
+                item.classList.add('active');
+            });
+            // (선택 사항) 마우스를 올렸을 때 바뀌게 하려면 'click' -> 'mouseenter' 로 변경
+        });
+    }
+
+    // 2. Mobile Main Banner Swiper (모바일용 슬라이드)
+    const mainSwiper = new Swiper(".mainSwiper", {
+        loop: true, // 무한 반복
+        slidesPerView: 1, // 한 번에 하나만 보임
+        centeredSlides: true,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+        },
+        // 필요시 페이지네이션 활성화
+        // pagination: {
+        //     el: ".swiper-pagination",
+        //     clickable: true,
+        // },
+    });
+});
+
 // swiper
 document.addEventListener('DOMContentLoaded', () => {
  const swiper = new Swiper('#mobile-slider-container', {
@@ -23,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
     
 });
+
 document.addEventListener('DOMContentLoaded', () => {
 // 신규 팝업
     // 새로운 Swiper 슬라이더 (텍스트와 이미지 동시 변경)

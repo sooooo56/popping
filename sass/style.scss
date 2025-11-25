@@ -14,28 +14,198 @@ a{
   margin: var.$grayColor auto;
 }
 
-// 메인 비주얼 섹션 (배경 이미지 및 효과를 위한 래퍼)
+// 메인 비주얼 섹션 스타일
 .main-visual-section {
+  width: 100%;
   position: relative;
-  width: 100vw;
-  height: 80rem;
-  display: flex; 
-  justify-content: center; 
-  align-items: center;
   overflow: hidden;
 
-  // 배경 이미지와 효과 
-  &::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
+  // === 1. Desktop Banner Style ===
+  .desktop-banner {
+    display: flex;
+    justify-content: flex-start; 
+    align-items: center;
+    gap: 10px;
+    height: 500px;
+    padding: 10rem 0 3rem 0;
+    padding-left: calc((100vw - 1440px) / 2);
+    width: 100%; 
+    
+    @media (max-width: 1480px) {
+        padding-left: 4rem;
+        padding-right: 4rem; 
+    }
+    
+    .banner-item {
+      position: relative;
       height: 100%;
-      background: url('../img/mainvisual/main-bg.png') no-repeat center center;
-      opacity: 0.3;
-      filter: blur(6px);
-      z-index: 1;
+      border-radius: 14px;
+      background-size: cover;
+      background-position: center;
+      cursor: pointer;
+      overflow: hidden;
+      flex-shrink: 0;
+      
+      transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+      
+      // [상태 1] 기본 너비
+      width: 100px; 
+
+      .overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0,0,0,0.3);
+        transition: background 0.3s;
+      }
+      
+      .text-box {
+        position: absolute;
+        bottom: 30px;
+        left: 30px;
+        color: #fff;
+        opacity: 0;
+        transition: opacity 0.3s 0.2s;
+        white-space: nowrap;
+        z-index: 2;
+
+        h3 {
+          font-size: 3.2rem;
+          font-weight: 700;
+          margin-bottom: 1rem;
+        }
+        p {
+          font-size: 1.6rem;
+          font-weight: 400;
+        }
+      }
+
+      // [상태 2] 활성화된 배너
+      &.active {
+        width: 952px;
+        .overlay { background: rgba(0,0,0,0); }
+        .text-box { opacity: 1; }
+      }
+
+      // [상태 3] 활성화된 배너의 바로 오른쪽 형제
+      &.active + .banner-item {
+        width: 340px;
+        .overlay { background: rgba(0,0,0,0.1); }
+      }
+    }
+  }
+
+  // === 2. Mobile Banner Style ===
+  .mobile-main-banner {
+    display: none; 
+  }
+}
+
+// === 아이콘 네비게이션 섹션 ===
+.icon-nav-section {
+  padding: 2rem 0;
+  
+  .icon-scroll-wrap {
+    display: flex;
+    justify-content: flex-start;
+    gap: 3rem;
+  }
+
+  .icon-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+    color: var.$bColor;
+    min-width: 60px;
+
+    span {
+      font-size: 1.4rem;
+      font-weight: 500;
+    }
+
+    .icon-circle {
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      //Inner Shadow
+      box-shadow: inset 3px 3px 6px rgba(163, 177, 198, 0.4), 
+                  inset -3px -3px 6px rgba(255, 255, 255, 0.8),
+                  3px 3px 6px rgba(0,0,0,0.05); // 외부는 살짝 그림자
+    }
+  }
+}
+
+// === 반응형 (Mobile & Tablet) ===
+@media (max-width: 1024px) {
+  .main-visual-section {
+    // 모바일에서는 데스크탑 배너 숨김
+    .desktop-banner {
+      display: none; 
+    }
+
+    // 모바일 배너 보임
+    .mobile-main-banner {
+      display: block; 
+      width: 100%;
+      
+      .swiper {
+        width: 100%;
+        height: 500px;
+      }
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        
+        // 텍스트 박스 (모바일)
+        .text-box {
+          position: absolute;
+          bottom: 4rem;
+          left: 2rem;
+          color: #fff;
+          z-index: 2;
+
+          h3 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+          }
+          p {
+            font-size: 1.6rem;
+            opacity: 0.9;
+          }
+        }
+        
+        // 하단 그라데이션 (텍스트 잘 보이게)
+        .overlay {
+           position: absolute;
+           bottom: 0;
+           left: 0;
+           width: 100%;
+           height: 50%;
+           background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+        }
+      }
+    }
+  }
+
+  // 아이콘 네비게이션 가로 스크롤
+  .icon-nav-section {
+    padding: 2rem 2rem 4rem; // 좌우 패딩 추가
+
+    .icon-scroll-wrap {
+      justify-content: flex-start; // 왼쪽 정렬
+      overflow-x: auto;
+      padding-top: 3rem;
+      gap: 2rem;
+
+      &::-webkit-scrollbar { display: none; } // 스크롤바 숨김
+    }
   }
 }
 
@@ -131,6 +301,38 @@ a{
   }
   
 }
+
+// === 반응형 처리 ===
+  @media (max-width: 1024px) {
+    .desktop-banner {
+      display: none; // 데스크탑 숨김
+    }
+
+    .mobile-main-banner {
+      display: block; // 모바일 보임
+      width: 100%;
+      height: 100vw; // 정사각형 혹은 비율대로 (원하시면 500px 고정 가능)
+      max-height: 500px;
+
+      .swiper-slide {
+        background-size: cover;
+        background-position: center;
+        position: relative;
+
+        .text-box {
+          position: absolute;
+          bottom: 3rem;
+          left: 2rem;
+          color: var.$WColor;
+          text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+
+          h3 { font-size: 2.5rem; margin-bottom: 0.5rem; }
+          p { font-size: 1.4rem; }
+        }
+      }
+    }
+  }
+
 
 // 모바일 (max-width: 768px)
 @media (max-width: 768px) {
