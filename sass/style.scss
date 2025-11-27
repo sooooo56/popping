@@ -10,9 +10,6 @@ a{
   @include var.container();
 }
 
-.main-event-container{
-  margin: var.$grayColor auto;
-}
 
 // 메인 비주얼 섹션 스타일
 .main-visual-section {
@@ -49,7 +46,7 @@ a{
       transition: width 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
       
       // [상태 1] 기본 너비
-      width: 100px; 
+      width: 105px; 
 
       .overlay {
         position: absolute;
@@ -81,14 +78,14 @@ a{
 
       // [상태 2] 활성화된 배너
       &.active {
-        width: 952px;
+        width: 973px;
         .overlay { background: rgba(0,0,0,0); }
         .text-box { opacity: 1; }
       }
 
       // [상태 3] 활성화된 배너의 바로 오른쪽 형제
       &.active + .banner-item {
-        width: 340px;
+        width: 360px;
         .overlay { background: rgba(0,0,0,0.1); }
       }
     }
@@ -106,7 +103,7 @@ a{
   
   .icon-scroll-wrap {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center;
     gap: 3rem;
   }
 
@@ -139,9 +136,10 @@ a{
   }
 }
 
-// === 반응형 (Mobile & Tablet) ===
-@media (max-width: 1024px) {
-  .main-visual-section {
+
+// === 반응형 처리 ===
+  @media (max-width: 1024px) {
+      .main-visual-section {
     // 모바일에서는 데스크탑 배너 숨김
     .desktop-banner {
       display: none; 
@@ -154,7 +152,7 @@ a{
       
       .swiper {
         width: 100%;
-        height: 500px;
+        height: 50rem;
       }
 
       .swiper-slide {
@@ -196,184 +194,28 @@ a{
 
   // 아이콘 네비게이션 가로 스크롤
   .icon-nav-section {
-    padding: 2rem 2rem 4rem; // 좌우 패딩 추가
-
     .icon-scroll-wrap {
-      justify-content: flex-start; // 왼쪽 정렬
+      justify-content: center; // 왼쪽 정렬
       overflow-x: auto;
-      padding-top: 3rem;
-      gap: 2rem;
 
       &::-webkit-scrollbar { display: none; } // 스크롤바 숨김
     }
   }
 }
 
-// 오늘의 팝업 (텍스트와 메인 이미지를 담는 컨테이너)
-#todayPopup {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-}
-
-// 왼쪽 텍스트 영역 (오늘의 팝업 추천, 데이즈데이즈 팝업, 날짜)
-.todayPopupInnerTxt {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  color: var.$bColor;
-  height: 40rem;
-  // flex-grow: 1; // 남은 공간을 채우도록 (필요시 활성화)
-
-  // "오늘의 팝업 추천"과 "데이즈데이즈 팝업"을 묶는 그룹
-  .text-group {
-      display: flex;
-      flex-direction: column;
-      gap: 1.6rem; // 16px
-  }
-
-  .popup-name {
-    @include var.title-style();
-    color: var.$bColor;
-  }
-
-  .todayPopupTxt {
-      color: var.$point-color;
-      font-weight: 700;
-      font-size: 3rem;
-  }
-
-  .pop-date {
-      font-weight: 500;
-      font-size: 2.5rem;
-  }
-}
-
-// 오른쪽 메인 이미지 영역
-.main-visual-image {
-  flex-shrink: 0;
-  
-  img {
-      width: 40rem;
-      height: 40rem;
-      object-fit: cover;
-      display: block;
-  }
-}
-
-// 태블릿 (max-width: 1024px)
-@media (max-width: 1024px) {
-  .main-visual-section {
-      height: 60rem;
-  }
-  #todayPopup {
-      flex-direction: column;
-      align-items: center;
-      gap: 4rem;
-  }
-  .todayPopupInnerTxt {
-      text-align: center;
-      height: auto; 
-      gap: 3rem;
-
-      .text-group {
-        align-items: center;
-        .popup-name {
-          font-size: 3.8rem;
-      }
-      .todayPopupTxt {
-          font-size: 2.5rem;
-      }
-      .pop-date {
-          font-size: 2rem;
-      }
-    }
-  }
-
-  .main-visual-image {
-    img{
-        width: 30rem;
-        height: 30rem;
-    }
-  }
-  
-}
-
-// === 반응형 처리 ===
-  @media (max-width: 1024px) {
-    .desktop-banner {
-      display: none; // 데스크탑 숨김
-    }
-
-    .mobile-main-banner {
-      display: block; // 모바일 보임
-      width: 100%;
-      height: 100vw; // 정사각형 혹은 비율대로 (원하시면 500px 고정 가능)
-      max-height: 500px;
-
-      .swiper-slide {
-        background-size: cover;
-        background-position: center;
-        position: relative;
-
-        .text-box {
-          position: absolute;
-          bottom: 3rem;
-          left: 2rem;
-          color: var.$WColor;
-          text-shadow: 0 2px 4px rgba(0,0,0,0.5);
-
-          h3 { font-size: 2.5rem; margin-bottom: 0.5rem; }
-          p { font-size: 1.4rem; }
-        }
-      }
-    }
-  }
-
 
 // 모바일 (max-width: 768px)
 @media (max-width: 768px) {
-  .main-visual-section {
-      height: 50rem;
-      padding-top: 50px;
-  }
 
   .main-event-container{
     margin: var.$mo auto;
   }
-  #todayPopup {
-      flex-direction: column;
-      padding: 2rem 0;
-      gap: 3rem;
 
-      .todayPopupInnerTxt {
-        order: 2;
-        gap: 2rem;
-  
-        .popup-name {
-          font-size: 2.5rem;
-      }
-      .todayPopupTxt {
-          font-size: 2rem;
-      }
-        .pop-date {
-          font-size: 1.5rem;
-      }
+  .icon-nav-section {
+    .icon-scroll-wrap {
+      justify-content: flex-start;
+      padding-top: 5rem;
     }
   }
- 
-  .main-visual-image {
-      order: 1;
-
-      img {
-          width: 25rem;
-          height: 25rem;
-      }
-  }
-
-  
 }
 

@@ -189,3 +189,25 @@ button {
     height: 350px;
   }
 }
+
+.swiper-pagination-new {
+  position: relative;
+  width: 70%;
+  margin-left: 30%;
+  margin-top: 40px;
+  min-height: 2px;
+}
+@media (max-width: 768px) {
+  .swiper-pagination-new {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 20px;
+  }
+}
+.swiper-pagination-new .swiper-pagination-progressbar-total {
+  background: #A3A3A3;
+  height: 2px;
+}
+.swiper-pagination-new .swiper-pagination-progressbar-fill {
+  background: #FF3686;
+}

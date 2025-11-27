@@ -1,147 +1,141 @@
-@use 'variables' as var;
-
+@use "variables" as var;
 
 .new-container {
-    background-color: var.$grayColor;
-    padding: var.$pc 0;
+  background-color: var.$grayColor;
+  padding: var.$pc 0;
 
-    @media (max-width: 1420px) {
-        padding: var.$mo 0;
-        margin-top: 6rem;
-    }
-    
-    @media (max-width: 768px) {
-        padding: var.$mo 0;
-        margin-top: 4rem;
-    }
+  @media (max-width: 1420px) {
+    padding: var.$mo 0;
+    margin-top: 6rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: var.$mo 0;
+    margin-top: 4rem;
+  }
 }
 
 .new-title {
-    @include var.title-style();
-    padding-bottom: var.$mo;
-
+  @include var.title-style();
+  padding-bottom: var.$mo;
 }
 
 .new-container-inner {
-    display: flex;
-    align-items: center;
-    
-    @media (max-width: 768px) {
-        flex-direction: column;
-    }
+  display: flex;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 }
 
 .new-text {
-    width: 30%;
-    padding-right: 50px;
-    
-    @media (max-width: 768px) {
+  width: 30%;
+  padding-right: 50px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .ing-box {
+    display: inline-block;
+    background-color: var.$point-color;
+    padding: 0.3rem 2rem;
+    border-radius: 3.75rem;
+    color: var.$WColor;
+  }
+
+  .new-txt {
+    .new-name {
+      @include var.sub-title-style();
+      padding-top: 10px;
+    }
+
+    .new-info {
+      padding-top: 20px;
+      line-height: 2.5rem;
+    }
+
+    .new-date {
+      padding-top: 1.5rem;
+    }
+  }
+
+  .new-button {
+    a {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 0;
+      color: var.$grayColor2;
+      border-bottom: 2px solid transparent;
+      transition: all 0.3s ease;
+      position: relative;
+      @include var.s-title-style();
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
         width: 100%;
-        padding-right: 0;
-        margin-bottom: 20px;
-    }
-    
-    .ing-box {
-        display: inline-block;
+        height: 2px;
         background-color: var.$point-color;
-        padding: 0.3rem 2rem;
-        border-radius: 3.75rem;
-        color: var.$WColor;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+      }
+
+      &:hover {
+        font-weight: 800;
+        color: var.$point-color;
+      }
+
+      &:hover::after {
+        transform: scaleX(1);
+      }
     }
 
-    .new-txt {
-        .new-name {
-            @include var.sub-title-style();
-            padding-top: 10px;
-        }
-
-        .new-info {
-            padding-top: 20px;
-            line-height: 2.5rem;
-        }
-
-        .new-date{
-                padding-top: 1.5rem;
-            }
-
-        
+    @media (max-width: 768px) {
+      a {
+        color: var.$point-color;
+        font-weight: 800;
+        border-bottom: 2px solid var.$point-color;
+        padding-bottom: 1px;
+      }
     }
-
-    .new-button {
-        
-        a {
-          display: inline-block;
-          margin-top: 20px;
-          padding: 10px 0;
-          color: var.$grayColor2;
-          border-bottom: 2px solid transparent;
-          transition: all 0.3s ease;
-          position: relative;
-          @include var.s-title-style();
-
-            &::after {
-              content: '';
-              position: absolute;
-              bottom: 0;
-              left: 0;
-              width: 100%;
-              height: 2px;
-              background-color: var.$point-color;
-              transform: scaleX(0);
-              transition: transform 0.3s ease;
-            }
-
-            &:hover {
-              font-weight: 800;
-              color: var.$point-color;
-            }
-
-            &:hover::after {
-                transform: scaleX(1);
-            }
-        }
-
-        @media (max-width: 768px) {
-            a{
-                color: var.$point-color;
-                font-weight: 800;
-                border-bottom: 2px solid var.$point-color;
-                padding-bottom: 1px;
-            }
-        }
-    }
+  }
 }
 
 .new-Swiper {
-    width: 70%;
-    
-    @media (max-width: 768px) {
-        width: 100%;
-    }
+  width: 70%;
 
-    .swiper-slide {
-        transition: opacity 0.3s ease;
-    }
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
-    .swiper-slide:not(.swiper-slide-active) {
-        opacity: 0.5;
-        img {
-            filter: grayscale(100%) brightness(0.5);
-        }
-    }
+  .swiper-slide {
+    transition: opacity 0.3s ease;
+  }
 
-    .swiper-slide-active {
-        opacity: 1;
-        img {
-            filter: none;
-        }
+  .swiper-slide:not(.swiper-slide-active) {
+    opacity: 0.5;
+    img {
+      filter: grayscale(100%) brightness(0.5);
     }
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+    img {
+      filter: none;
+    }
+  }
 }
-
 
 .new-Swiper {
   .swiper-slide {
-    img{
+    img {
       width: 100%; //팝업 이미지 크기 조절
       height: 450px; //팝업 이미지 크기 조절
       object-fit: cover;
@@ -149,10 +143,38 @@
       margin: 0 auto;
 
       @media (max-width: 768px) {
-            height: 350px;
-        }
+        height: 350px;
+      }
     }
   }
-  
 }
 
+
+// 신규 팝업 프로그레스 바 스타일
+.swiper-pagination-new {
+    position: relative; 
+    
+    // PC 레이아웃 (.new-text: 30%, .new-Swiper: 70% 일 때)
+    width: 70%;
+    margin-left: 30%;
+    margin-top: 40px;
+    
+    min-height: 2px;
+    
+    // 모바일 (768px 이하)
+    @media (max-width: 768px) {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 20px;
+    }
+
+    // 바 자체의 색상과 높이 (기존 코드와 동일)
+    .swiper-pagination-progressbar-total {
+        background: var.$grayColor2;
+        height: 2px;
+    }
+
+    .swiper-pagination-progressbar-fill {
+        background: var.$point-color;
+    }
+}

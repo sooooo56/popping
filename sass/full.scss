@@ -1,403 +1,388 @@
-@use 'variables' as var;
+@use "variables" as var;
 
 // 왼쪽 검색 컨테이너
 
+#full-schedule {
+  padding-top: var.$padding-t165;
+  overflow: hidden;
+  height: auto;
 
-#full-schedule{
-    padding-top: var.$padding-t165;
-    overflow: hidden;
-    height: auto;
+  .popup-title {
+    @include var.title-style();
+    margin-bottom: 4rem;
+  }
 
-    .popup-title{
-        @include var.title-style();
-        margin-bottom: 4rem;
+  .view-type {
+    display: flex;
+    gap: 1rem;
+    padding-left: 370px;
+    margin-bottom: 2rem;
+
+    a {
+      padding: 8px 2rem;
+      background-color: var.$grayColor;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
     }
 
-    .view-type{
-        display: flex;
-        gap: 1rem;
-        padding-left: 370px;
-        margin-bottom: 2rem;
-
-        a{
-            padding: 8px 2rem;
-            background-color: var.$grayColor;
-            border-radius: 50px;
-            display: flex;
-            align-items: center;
-        }
-
-        .list-btn::before{
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 4px;
-            background: url(../img/icon/list-icon.png) no-repeat center center;
-        }
-
-        .calendar-btn::before{
-            content: '';
-            display: inline-block;
-            width: 20px;
-            height: 20px;
-            margin-right: 4px;
-            background: url(../img/icon/calendar.png) no-repeat center center;
-        }
-
-
-        @media (max-width: 768px) {
-            padding-left: 0;
-        }
+    .list-btn::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+      background: url(../img/icon/list-icon.png) no-repeat center center;
     }
+
+    .calendar-btn::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 4px;
+      background: url(../img/icon/calendar.png) no-repeat center center;
+    }
+
+    @media (max-width: 768px) {
+      padding-left: 0;
+    }
+  }
 }
 
-.content-container{
-    display: flex;
-    gap: 5rem;
-    justify-content: space-around;
-    margin-bottom: 14rem;
+.content-container {
+  display: flex;
+  gap: 5rem;
+  justify-content: space-around;
+  margin-bottom: 14rem;
 }
 
 // 왼쪽 필터 컨테이너
-.left-container{
-    width: 30%;
-    position: sticky;
-    top: 100px;
+.left-container {
+  width: 30%;
+  position: sticky;
+  top: 100px;
 }
 
-.search-bar{
+.search-bar {
+  width: 100%;
+  input {
+    padding: 12px 2.4rem;
     width: 100%;
-    input{
-        padding: 12px 2.4rem;
-        width: 100%;
-        box-sizing: border-box;
-        border: 1.5px solid var.$bColor;
-    }
+    box-sizing: border-box;
+    border: 1.5px solid var.$bColor;
+  }
 }
 
-.filter{
-    background-color: var.$bColor;
-    padding: 3rem 2.4rem;
-    margin-top: 1rem;
+.filter {
+  background-color: var.$bColor;
+  padding: 3rem 2.4rem;
+  margin-top: 1rem;
 }
 
-.top-txt{
-    color: var.$WColor;
-    font-weight: 500;
-    padding-bottom: 1.5rem;
+.top-txt {
+  color: var.$WColor;
+  font-weight: 500;
+  padding-bottom: 1.5rem;
 
-    .reset-btn{
-        cursor: pointer;
-        
-        &:hover{
-            text-decoration: underline;
-            
-        }
-    }
-}
-
-.select-container{
-    padding-bottom: 4rem;
-}
-
-.date-select{
-    gap: 1rem;
-    align-items: center;
-    position: relative; // 가상 요소의 기준점
-
-    .start-date, .end-date{
-        flex-grow: 1;
-
-        label{
-            color: var.$WColor;
-            font-weight: 500;
-        }
-
-        &::after {
-            content: "";
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px; // 선의 길이
-            height: 1px;
-            background-color: var.$grayColor2;
-            transform: translate(-50%, -50%);
-        }
-
-        input{
-            padding: 8px 0;
-            color: var.$WColor;
-            background-color: #3b3b3b;
-            border: none;
-            font-family: "Pretendard", sans-serif;
-            text-align: center;
-            width: 100%;
-        }
-
-    }
-
-}
-
-
-.flex-content{
-    display: flex;
-    gap: .8rem;
-    justify-content: space-between;
-}
-
-.date-btn{
-    div{
-        padding: 8px 0;
-        border: 1px solid var.$grayColor2;
-        color: var.$WColor;
-        margin-bottom: 1.5rem;
-        cursor: pointer;
-        font-weight: 200;
-        transition: 0.2s ;
-        width: calc(100%/4);
-        text-align: center;
-
-        &:hover{
-            border: 1px solid var.$WColor;
-            transition: 0.2s;
-        }
-
-        &.selected{
-            @include var.clickable();
-        }
-    }
-
-    
-    
-}
-
-.category{
-    .category-btn{
-        .flex-content{
-            margin-bottom: 1rem;
-            justify-content: flex-start;
-            div{
-                padding: 4px 2.8rem;
-                text-align: center;
-                border: 1px solid var.$grayColor2;
-                border-radius: 10rem;
-                cursor: pointer;
-                color: var.$grayColor2;
-                transition: 0.2s ;
-
-                &:hover{
-                    border: 1px solid var.$WColor;
-                    transition: 0.2s;
-                    color: var.$WColor;
-                }
-
-                &.selected{
-                    @include var.clickable();
-                }
-            }
-        }
-    }
-
-}
-
-.Search-button{
+  .reset-btn {
     cursor: pointer;
-    margin-top: 4rem;
-    border: 1px solid var.$WColor;
-    color: var.$WColor;
-    padding: 12px 1.25rem;
-    text-align: center;
-    transition: 0.2s;
 
-    &:hover{
-        background-color: var.$WColor;
-        transition: 0.2s;
-        color: var.$bColor;
-        font-weight: 700;
+    &:hover {
+      text-decoration: underline;
     }
+  }
 }
 
+.select-container {
+  padding-bottom: 4rem;
+}
 
+.date-select {
+  gap: 1rem;
+  align-items: center;
+  position: relative; // 가상 요소의 기준점
+
+  .start-date,
+  .end-date {
+    flex-grow: 1;
+
+    label {
+      color: var.$WColor;
+      font-weight: 500;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 5px; // 선의 길이
+      height: 1px;
+      background-color: var.$grayColor2;
+      transform: translate(-50%, -50%);
+    }
+
+    input {
+      padding: 8px 0;
+      color: var.$WColor;
+      background-color: #3b3b3b;
+      border: none;
+      font-family: "Pretendard", sans-serif;
+      text-align: center;
+      width: 100%;
+    }
+  }
+}
+
+.flex-content {
+  display: flex;
+  gap: 0.8rem;
+  justify-content: space-between;
+}
+
+.date-btn {
+  div {
+    padding: 8px 0;
+    border: 1px solid var.$grayColor2;
+    color: var.$WColor;
+    margin-bottom: 1.5rem;
+    cursor: pointer;
+    font-weight: 200;
+    transition: 0.2s;
+    width: calc(100% / 4);
+    text-align: center;
+
+    &:hover {
+      border: 1px solid var.$WColor;
+      transition: 0.2s;
+    }
+
+    &.selected {
+      @include var.clickable();
+    }
+  }
+}
+
+.category {
+  .category-btn {
+    .flex-content {
+      margin-bottom: 1rem;
+      justify-content: flex-start;
+      div {
+        padding: 4px 2.6rem;
+        text-align: center;
+        border: 1px solid var.$grayColor2;
+        border-radius: 10rem;
+        cursor: pointer;
+        color: var.$grayColor2;
+        transition: 0.2s;
+
+        &:hover {
+          border: 1px solid var.$WColor;
+          transition: 0.2s;
+          color: var.$WColor;
+        }
+
+        &.selected {
+          @include var.clickable();
+        }
+      }
+    }
+  }
+}
+
+.Search-button {
+  cursor: pointer;
+  margin-top: 4rem;
+  border: 1px solid var.$WColor;
+  color: var.$WColor;
+  padding: 12px 1.25rem;
+  text-align: center;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: var.$WColor;
+    transition: 0.2s;
+    color: var.$bColor;
+    font-weight: 700;
+  }
+}
 
 /* ⭐️ 데스크톱 버전 */
-.search-button-fixed{
-    display: none;
+.search-button-fixed {
+  display: none;
 }
 
-@media (max-width: 1420px){
-    .left-container {
-        width: 45%;
-    }
+@media (max-width: 1420px) {
+  .left-container {
+    width: 45%;
+  }
 
-    #full-schedule{
-        .view-type{
-            padding-left: 410px;
-        }
+  #full-schedule {
+    .view-type {
+      padding-left: 410px;
     }
-
+  }
 }
 
-@media (max-width: 1168px){
-    .left-container {
-        width: 50%;
-    }
+@media (max-width: 1168px) {
+  .left-container {
+    width: 50%;
+  }
 
-    #full-schedule{
-        .view-type{
-            padding-left: 384px;
-        }
+  #full-schedule {
+    .view-type {
+      padding-left: 384px;
     }
-
+  }
 }
 
 @media (max-width: 1024px) {
-    #full-schedule{
-        padding-top: 10.5rem;
-        .view-type{
-            padding: 0;
-        }
+  #full-schedule {
+    padding-top: 10.5rem;
+    .view-type {
+      padding: 0;
+    }
+  }
+
+  .left-container {
+    display: none;
+  }
+
+  .search-button-fixed {
+    display: block;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+    background-color: var.$bColor;
+    color: var.$WColor;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .modal-container {
+    // display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease;
+
+    // 모달이 활성화될 때
+    &.active {
+      opacity: 1;
+      visibility: visible;
     }
 
     .left-container {
-        display: none;
+      display: block;
+      width: 100%;
+      position: static;
+      top: auto;
+
+      .filter {
+        padding: 0;
+      }
     }
-    
-    .search-button-fixed {
-        display: block;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        padding: 1.2rem 0;
-        text-align: center;
-        background-color: var.$bColor;
-        color: var.$WColor;
-        font-weight: bold;
+  }
+
+  .modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+
+  .modal-content {
+    // 모달창 스타일링
+    width: 100%;
+    max-height: 80vh;
+    background-color: var.$bColor;
+    border-radius: 20px 20px 0 0;
+    padding: 2rem;
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 201;
+    transform: translateY(100%);
+    transition: transform 0.3s ease-out;
+
+    .active & {
+      transform: translateY(0);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: flex-end;
+
+      .modal-close-btn {
+        border: none;
+        background: none;
+        padding-bottom: 1rem;
         cursor: pointer;
-        z-index: 100;
+      }
     }
-    
-    .modal-container {
-        // display: none; 
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 200;
+  }
 
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        opacity: 0;
-        visibility: hidden;
-        transition: opacity 0.3s ease, visibility 0.3s ease;
-            
-        // 모달이 활성화될 때
-        &.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        
-        .left-container {
-            display: block;
-            width: 100%; 
-            position: static;
-            top: auto;
-        
-            .filter {
-                padding: 0;
-            }
-        }
+  // ⭐️ 모달 내부 필터 스타일링을 위한 새로운 클래스
+  .filter-modal-content {
+    width: 100%;
 
-    }
-    
-    .modal-backdrop {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-    
-    .modal-content {
-        // 모달창 스타일링
-        width: 100%;
-        max-height: 80vh;
-        background-color: var.$bColor;
-        border-radius: 20px 20px 0 0;
-        padding: 2rem;
-        box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
-        z-index: 201;
-        transform: translateY(100%);
-        transition: transform 0.3s ease-out;
-        
-        .active & {
-            transform: translateY(0);
-        }
-
-        .modal-header{
-            display: flex;
-            justify-content: flex-end;
-
-            .modal-close-btn{
-                border: none;
-                background: none;
-                padding-bottom: 1rem;
-                cursor: pointer;
-            }
-            
-        }
+    .search-bar input {
+      background-color: #3b3b3b;
+      color: var.$WColor;
+      border: 1px solid var.$grayColor2;
     }
 
-    // ⭐️ 모달 내부 필터 스타일링을 위한 새로운 클래스
-    .filter-modal-content {
-        width: 100%;
-        
-        .search-bar input {
-            background-color: #3b3b3b;
-            color: var.$WColor;
-            border: 1px solid var.$grayColor2;
-        }
+    .filter {
+      background-color: #3b3b3b;
+      padding: 3rem 2.4rem;
+      margin-top: 1rem;
 
-        .filter {
-            background-color: #3b3b3b; 
-            padding: 3rem 2.4rem;
-            margin-top: 1rem;
-
-            .Search-button {
-                margin-top: 4rem;
-                color: var.$WColor;
-                border: 1px solid var.$WColor;
-                background-color: transparent;
-            }
-        }
+      .Search-button {
+        margin-top: 4rem;
+        color: var.$WColor;
+        border: 1px solid var.$WColor;
+        background-color: transparent;
+      }
     }
+  }
 
-    .category {
-        .category-btn {
-            .flex-content {
-                div{
-                    width: 100%;
-                    padding: 8px 0;
-                    text-align: center;
-                }
-            }
+  .category {
+    .category-btn {
+      .flex-content {
+        div {
+          width: 100%;
+          padding: 8px 0;
+          text-align: center;
         }
+      }
     }
+  }
 
-    .top-txt{
-        padding-top: 10px;
-
-    }
-
+  .top-txt {
+    padding-top: 10px;
+  }
 }
 
 //mo
 @media (max-width: 768px) {
-    .view-type{
-        padding-left: 0;
-    }
+  .view-type {
+    padding-left: 0;
+  }
 }

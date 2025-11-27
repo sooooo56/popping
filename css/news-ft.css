@@ -44,7 +44,12 @@ button {
 .news-container-inner {
   display: flex;
   gap: 35%;
-  padding-top: 12rem;
+  padding: 12rem 0;
+}
+.news-container-inner .news-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 @media (max-width: 768px) {
   .news-container-inner {
@@ -101,7 +106,6 @@ button {
   color: #A3A3A3;
   font-size: 1.8rem;
   font-weight: 700;
-  padding-bottom: 12rem;
 }
 .news-text p a:hover {
   color: #fff;

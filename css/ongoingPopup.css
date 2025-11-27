@@ -34,31 +34,38 @@ button {
 .main-event-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  border-left: 2px solid #000;
-  border-top: 2px solid #000;
+  width: 100%;
   margin: 12rem 0;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  gap: 0;
 }
 .main-event-grid .event-card {
+  position: relative;
+  height: 35rem;
+  overflow: hidden;
+  cursor: pointer;
   border-right: 2px solid #000;
   border-bottom: 2px solid #000;
+  border-left: none !important;
+  border-top: none !important;
+  box-sizing: border-box;
 }
 .main-event-grid .event-card:nth-child(1) {
-  border-left: none;
-  border-top: none;
+  cursor: default;
   border-right: none;
-  cursor: auto;
 }
 .main-event-grid .event-card:nth-child(2) {
-  border-left: none;
-  border-top: none;
-  border-right: none;
-  cursor: auto;
-}
-.main-event-grid .event-card:nth-child(3) {
-  border-left: 2px solid #000;
-}
-.main-event-grid .event-card.event-header {
   cursor: default;
+}
+.main-event-grid .event-card:not(.event-header):not(.empty) a {
+  transition: opacity 0.3s ease;
+}
+.main-event-grid .event-card:not(.event-header):not(.empty) a:hover .event-card-content {
+  opacity: 0;
+}
+.main-event-grid .event-card:not(.event-header):not(.empty) a:hover .event-card-hover {
+  opacity: 1;
 }
 
 .event-card {
@@ -232,34 +239,6 @@ button {
 @media (min-width: 769px) and (max-width: 1024px) {
   .main-event-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-  .main-event-grid .event-card {
-    border-right: 2px solid #000;
-    border-bottom: 2px solid #000;
-  }
-  .main-event-grid .event-card:nth-child(1), .main-event-grid .event-card:nth-child(2) {
-    border-left: none;
-    border-right: 2px solid #000;
-    border-top: none;
-  }
-  .main-event-grid .event-card:nth-child(3) {
-    border-left: 2px solid #000;
-    border-right: 2px solid #000;
-    border-top: none;
-  }
-  .main-event-grid .event-card:nth-child(3n+1) {
-    border-left: none;
-  }
-  .main-event-grid .event-card:nth-child(-n+3) {
-    border-top: none;
-  }
-  .main-event-grid .event-card:nth-child(1), .main-event-grid .event-card:nth-child(2) {
-    border-left: none;
-    border-right: 2px solid #000;
-    border-top: none;
-  }
-  .main-event-grid .event-card:nth-child(3) {
-    border-left: 2px solid #000;
   }
 }
 @media (max-width: 768px) {

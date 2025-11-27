@@ -30,40 +30,47 @@ $padding-mobile: 1.5rem;
 // 데스크톱 그리드
 .main-event-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  border-left: 2px solid var.$bColor;
-  border-top: 2px solid var.$bColor;
+  grid-template-columns: repeat(4, 1fr); 
+  width: 100%;
   margin: var.$pc 0;
 
+  border-top: 2px solid var.$bColor;
+  border-left: 2px solid var.$bColor;
+  gap: 0; 
+
   .event-card {
+    position: relative;
+    height: $card-height;
+    overflow: hidden;
+    cursor: pointer;
     border-right: 2px solid var.$bColor;
     border-bottom: 2px solid var.$bColor;
+    
+    // 기존에 있던 border-left, border-top 관련 충돌 방지
+    border-left: none !important; 
+    border-top: none !important;
 
-    // 첫 번째 박스 (Header)
+    box-sizing: border-box;
+
+
+    // 첫 번째 박스 (Header) 커서 설정
     &:nth-child(1) {
-      border-left: none;
-      border-top: none;
+      cursor: default;
       border-right: none;
-      cursor: auto;
     }
-    // 두 번째 박스 (Empty)
+    // 두 번째 박스 (Empty) 커서 설정
     &:nth-child(2) {
-      border-left: none;
-      border-top: none;
-      border-right: none;
-      cursor: auto;
-    }
-    // 세 번째 박스
-    &:nth-child(3) {
-      border-left: 2px solid var.$bColor;
+      cursor: default;
     }
 
-    &.event-header {
-      cursor: default;
+    // 헤더와 빈 박스가 아닌 경우에만 호버 효과 적용
+    &:not(.event-header):not(.empty) {
+      a {
+        @include card-hover-effect;
+      }
     }
   }
 }
-
 .event-card {
   position: relative;
   height: $card-height;
@@ -254,41 +261,6 @@ $padding-mobile: 1.5rem;
 @media (min-width: 769px) and (max-width: 1024px) {
   .main-event-grid {
     grid-template-columns: repeat(3, 1fr);
-    .event-card {
-      &:nth-child(1), &:nth-child(2) {
-        border-left: none;
-        border-right: 2px solid var.$bColor;
-        border-top: none;
-      }
-      &:nth-child(3) {
-        border-left: 2px solid var.$bColor;
-        border-right: 2px solid var.$bColor;
-        border-top: none;
-      }
-      // 새로운 그리드 규칙 적용
-      border-right: 2px solid var.$bColor;
-      border-bottom: 2px solid var.$bColor;
-
-      // 1번째 열 (3n+1) border-left 제거
-      &:nth-child(3n + 1) {
-        border-left: none;
-      }
-      // 1번째 줄 (-n+3) border-top 제거
-      &:nth-child(-n + 3) {
-        border-top: none;
-      }
-      // 첫번째, 두번째 헤더 카드 border 처리
-      &:nth-child(1), &:nth-child(2) {
-          border-left: none;
-          border-right: 2px solid var.$bColor;
-          border-top: none;
-      }
-      // 3번째 카드 (첫번째 일반 카드) border-left 복구
-      &:nth-child(3) {
-          border-left: 2px solid var.$bColor;
-      }
-
-    }
   }
 }
 

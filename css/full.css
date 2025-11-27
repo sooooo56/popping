@@ -137,14 +137,17 @@ button {
   align-items: center;
   position: relative;
 }
-.date-select .start-date, .date-select .end-date {
+.date-select .start-date,
+.date-select .end-date {
   flex-grow: 1;
 }
-.date-select .start-date label, .date-select .end-date label {
+.date-select .start-date label,
+.date-select .end-date label {
   color: #fff;
   font-weight: 500;
 }
-.date-select .start-date::after, .date-select .end-date::after {
+.date-select .start-date::after,
+.date-select .end-date::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -154,7 +157,8 @@ button {
   background-color: #A3A3A3;
   transform: translate(-50%, -50%);
 }
-.date-select .start-date input, .date-select .end-date input {
+.date-select .start-date input,
+.date-select .end-date input {
   padding: 8px 0;
   color: #fff;
   background-color: #3b3b3b;
@@ -196,7 +200,7 @@ button {
   justify-content: flex-start;
 }
 .category .category-btn .flex-content div {
-  padding: 4px 2.8rem;
+  padding: 4px 2.6rem;
   text-align: center;
   border: 1px solid #A3A3A3;
   border-radius: 10rem;
